@@ -1,0 +1,11 @@
+input-files:
+  - main.md
+output-file: main.pdf
+toc: true
+variables:
+  titlepage: true
+  titlepage-color: "ffffff"
+  titlepage-rule-color: "ffffff"
+  titlepage-text-color: "000000"
+  toc-own-page: true
+  colorlinks: true
