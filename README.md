@@ -6,6 +6,7 @@ A simple web application using rdflib and the stackoverflow survey results to di
 python -m venv ./venv
 source ./venv/bin/activate.sh
 pip install -r requirements.txt
+ipython kernel install --user --name=venv
 ```
 
 ## Jupyter Notebook
