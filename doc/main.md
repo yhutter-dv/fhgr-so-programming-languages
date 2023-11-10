@@ -1,5 +1,6 @@
 ---
 title: Projektarbeit Knowledge Engineering and Extraction 
+subtitle: Analyse der populärsten Programmiersprachen auf Stackoverflow
 author:
 - Yannick Hutter 
 lang: gsw 
@@ -16,15 +17,40 @@ footer-center: ""
 footer-right: "\\small Seite \\thepage"
 ...
 
-# Projektthema
-In der heutigen Zeit existiert eine grosse **Vielzahl von unterschiedlichen Programmierpsrachen**. Ziel dieser Arbeit ist es die beliebtesten Programmiersprachen auf Basis der [Stack Overflow Annual Developer Survey](https://insights.stackoverflow.com/survey) aufzuzeigen. Anschliessend sollen für die populärsten Programmiersprachen weitere Informationen mithilfe von [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) erschlossen werden. Ziel ist es ein **Web basiertes Dashboard** mithilfe von [Streamlit](https://streamlit.io/) zu erstellen.
+# Knowledge Engineering
 
-## Datenquellen
-Als primäre Datenquelle dienen die Ergebnisse des [Stack Overflow Annual Developer Survey](https://insights.stackoverflow.com/survey). Als zusätzliche Datenquelle dient Wikidata. Insbesondere stehen folgende Fragestellungen im Vordergrund:
+## Aufgabenstellung und Zielsetzung
+In der heutigen Zeit existiert eine grosse **Vielzahl von unterschiedlichen Programmierpsrachen**. Ziel dieser Arbeit ist es die populärsten Programmiersprachen auf Basis der [Stack Overflow Annual Developer Survey](https://insights.stackoverflow.com/survey) aufzuzeigen. Anschliessend soll für jede Programmiersprachen weitere Informationen mithilfe von [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) erschlossen werden. Die primäre Anspruchsgruppe sind **Programmierer**, welche wissen wollen, welche Programmiersprache beruflich am zunkunftsträchtigsten sind. Ziel ist es ein **Web basiertes Dashboard** mithilfe von [Streamlit](https://streamlit.io/) zu erstellen und interaktiv explorierbar zu machen.
 
-* Welche *Art von Programmiersprache* sind am populärsten
-* Auf welche *Ursprünge* sind die Programmiersprachen zurückzuführen
-* Wo gibt es *Beziehungen zwischen Programmiersprachen*
+## Datengrundlage und Fragestellungen
+Als primäre Datenquelle dienen die Ergebnisse der [Stack Overflow Annual Developer Survey](https://insights.stackoverflow.com/survey). Aus dieser Datenquelle werden die populärsten Programmiersprache extrahiert. Der Datensatz steht als **CSV** Datei frei im Netz zur Verfügung. Diese Datenquelle soll mit Informationen aus Wikidata ergänzt werden. Insbesondere stehen folgende Fragestellungen im Vordergrund:
+
+* Welche **Programmiersprachen** sind am populärsten?
+* Aus welchen **Anwendungsfelder** gehen diese Programmiersprachen hervor?
+* Welche **Verwandschaften** zu anderen Programmiersprachen lassen sich herleiten?
 
 ## Ontologie
 > TODO
+
+* Welche Zusammenhänge sind modellierbar?
+* Liefern diese einen Mehrwert?
+
+# Knowledge Extraction
+## Thema
+> TODO
+
+* Welchen Mehrwert liefert das extrahierte Wissen für die Anwendung
+* Wie verändern sich die Möglichkeiten durch das zustätzliche Wissen?
+
+## Methoden
+> TODO
+
+* Aus welchen Datenquellen wird Wissen extrahiert (Web, Tabellen, etc.)?
+* Wie wird Hintergrundwissen eingebunden?
+* Welchen Mehrwert liefert dieses für die Knowledge Extraction Komponente?
+* Welcher IE Task wird addressiert (NER, NEL, Slot Filling etc.)?
+
+
+# Auswertung
+> TODO
+
