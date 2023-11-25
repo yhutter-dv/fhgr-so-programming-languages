@@ -1,0 +1,314 @@
+{
+    "languagesPeopleHaveWorkedWith": [
+        {
+            "language": "JavaScript",
+            "count": 55711,
+            "percentage": 11.951123763024045
+        },
+        {
+            "language": "HTML/CSS",
+            "count": 46396,
+            "percentage": 9.952869955830332
+        },
+        {
+            "language": "Python",
+            "count": 43158,
+            "percentage": 9.258254193329716
+        },
+        {
+            "language": "SQL",
+            "count": 42623,
+            "percentage": 9.14348599291655
+        },
+        {
+            "language": "TypeScript",
+            "count": 34041,
+            "percentage": 7.302475346288912
+        },
+        {
+            "language": "Bash/Shell (all shells)",
+            "count": 28351,
+            "percentage": 6.081856541894683
+        },
+        {
+            "language": "Java",
+            "count": 26757,
+            "percentage": 5.739911660663681
+        },
+        {
+            "language": "C#",
+            "count": 24193,
+            "percentage": 5.189882378683577
+        },
+        {
+            "language": "C++",
+            "count": 19634,
+            "percentage": 4.211885695162788
+        },
+        {
+            "language": "C",
+            "count": 16940,
+            "percentage": 3.6339688130822876
+        }
+    ],
+    "languagesPeopleWantToWorkWith": [
+        {
+            "language": "JavaScript",
+            "count": 34986,
+            "percentage": 9.348946085766814
+        },
+        {
+            "language": "Python",
+            "count": 34715,
+            "percentage": 9.276529565180212
+        },
+        {
+            "language": "TypeScript",
+            "count": 32256,
+            "percentage": 8.619436487237591
+        },
+        {
+            "language": "HTML/CSS",
+            "count": 29928,
+            "percentage": 7.997349181239044
+        },
+        {
+            "language": "SQL",
+            "count": 29598,
+            "percentage": 7.909166702295951
+        },
+        {
+            "language": "Rust",
+            "count": 26710,
+            "percentage": 7.137436401727308
+        },
+        {
+            "language": "C#",
+            "count": 18593,
+            "percentage": 4.9684146393603825
+        },
+        {
+            "language": "Bash/Shell (all shells)",
+            "count": 18279,
+            "percentage": 4.884507674547865
+        },
+        {
+            "language": "Go",
+            "count": 17993,
+            "percentage": 4.80808285946385
+        },
+        {
+            "language": "Java",
+            "count": 14384,
+            "percentage": 3.843687203386207
+        }
+    ],
+    "webFrameworksPeopleHaveWorkedWith": [
+        {
+            "webframework": "Node.js",
+            "count": 30626,
+            "percentage": 13.231888566293378
+        },
+        {
+            "webframework": "React",
+            "count": 29137,
+            "percentage": 12.588569749758053
+        },
+        {
+            "webframework": "jQuery",
+            "count": 15784,
+            "percentage": 6.819438683810314
+        },
+        {
+            "webframework": "Express",
+            "count": 13843,
+            "percentage": 5.980834370247477
+        },
+        {
+            "webframework": "Angular",
+            "count": 12537,
+            "percentage": 5.416580257154707
+        },
+        {
+            "webframework": "Next.js",
+            "count": 11972,
+            "percentage": 5.172473385870316
+        },
+        {
+            "webframework": "ASP.NET CORE",
+            "count": 11896,
+            "percentage": 5.139637771325868
+        },
+        {
+            "webframework": "Vue.js",
+            "count": 11758,
+            "percentage": 5.080015208074105
+        },
+        {
+            "webframework": "WordPress",
+            "count": 9604,
+            "percentage": 4.149384764274852
+        },
+        {
+            "webframework": "ASP.NET",
+            "count": 9185,
+            "percentage": 3.9683568367205866
+        }
+    ],
+    "webFrameworksPeopleWantToWorkWith": [
+        {
+            "webframework": "React",
+            "count": 24100,
+            "percentage": 12.344667206212288
+        },
+        {
+            "webframework": "Node.js",
+            "count": 23027,
+            "percentage": 11.795047790765574
+        },
+        {
+            "webframework": "Next.js",
+            "count": 14129,
+            "percentage": 7.23725323471259
+        },
+        {
+            "webframework": "Vue.js",
+            "count": 12001,
+            "percentage": 6.147234487209696
+        },
+        {
+            "webframework": "ASP.NET CORE",
+            "count": 10060,
+            "percentage": 5.153002161597328
+        },
+        {
+            "webframework": "Svelte",
+            "count": 9803,
+            "percentage": 5.021359859854733
+        },
+        {
+            "webframework": "Angular",
+            "count": 9359,
+            "percentage": 4.79393113622161
+        },
+        {
+            "webframework": "Express",
+            "count": 9115,
+            "percentage": 4.668947783594398
+        },
+        {
+            "webframework": "Django",
+            "count": 6945,
+            "percentage": 3.557415508180263
+        },
+        {
+            "webframework": "Spring Boot",
+            "count": 6587,
+            "percentage": 3.374038294079682
+        }
+    ],
+    "otherFrameworksPeopleHaveWorkedWith": [
+        {
+            "framework": ".NET (5+) ",
+            "count": 17005,
+            "percentage": 10.90980246232413
+        },
+        {
+            "framework": "NumPy",
+            "count": 13614,
+            "percentage": 8.734257613765406
+        },
+        {
+            "framework": "Pandas",
+            "count": 12756,
+            "percentage": 8.183795366621972
+        },
+        {
+            "framework": ".NET Framework (1.0 - 4.8)",
+            "count": 11452,
+            "percentage": 7.347195401266449
+        },
+        {
+            "framework": "Spring Framework",
+            "count": 7460,
+            "percentage": 4.786070353951074
+        },
+        {
+            "framework": "RabbitMQ",
+            "count": 6942,
+            "percentage": 4.4537399996150615
+        },
+        {
+            "framework": "TensorFlow",
+            "count": 6405,
+            "percentage": 4.109219921857457
+        },
+        {
+            "framework": "Scikit-Learn",
+            "count": 6339,
+            "percentage": 4.066876672077193
+        },
+        {
+            "framework": "Flutter",
+            "count": 6132,
+            "percentage": 3.93407284322091
+        },
+        {
+            "framework": "Apache Kafka",
+            "count": 5984,
+            "percentage": 3.8391213134106206
+        }
+    ],
+    "otherFrameworksPeopleWantToWorkWith": [
+        {
+            "framework": ".NET (5+) ",
+            "count": 13889,
+            "percentage": 9.490781867133153
+        },
+        {
+            "framework": "NumPy",
+            "count": 10495,
+            "percentage": 7.171557037624196
+        },
+        {
+            "framework": "Pandas",
+            "count": 9605,
+            "percentage": 6.563392600893797
+        },
+        {
+            "framework": "TensorFlow",
+            "count": 9143,
+            "percentage": 6.247693758456219
+        },
+        {
+            "framework": "Torch/PyTorch",
+            "count": 8276,
+            "percentage": 5.65524593076492
+        },
+        {
+            "framework": "Flutter",
+            "count": 7578,
+            "percentage": 5.178281012969619
+        },
+        {
+            "framework": "Apache Kafka",
+            "count": 7096,
+            "percentage": 4.848915553976302
+        },
+        {
+            "framework": "RabbitMQ",
+            "count": 6448,
+            "percentage": 4.406117177570349
+        },
+        {
+            "framework": "React Native",
+            "count": 6026,
+            "percentage": 4.11775156824425
+        },
+        {
+            "framework": "Scikit-Learn",
+            "count": 5491,
+            "percentage": 3.752169575378224
+        }
+    ]
+}
