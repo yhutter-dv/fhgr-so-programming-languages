@@ -53,6 +53,31 @@ def get_programming_language_subjects(programming_languages):
                 print(f"No matching language was found for {language}, skipping...")    
     return programming_language_subjects
 
+def get_programming_language_use_case_subjects(programming_language_subject):
+    query = PROGRAMMING_LANGUAGE_USE_CASES_QUERY.replace("%programming_language_subject%", str(subject))
+    result = g.query(query)
+    use_case_subjects = {}
+    for use_case, label in result:
+        use_case_subjects[label.strip()] = use_case
+    return use_case_subjects
+
+def get_programming_language_paradigm_subjects(programming_language_subject):
+    query = PROGRAMMING_LANGUAGE_PARADIGM_QUERY.replace("%programming_language_subject%", str(subject))
+    result = g.query(query)
+    paradigm_subjects = {}
+    for paradigm, label in result:
+        paradigm_subjects[label.strip()] = paradigm
+    return paradigm_subjects
+
+def get_programming_language_influenced_by_subjects(programming_language_subject):
+    query = PROGRAMMING_LANGUAGE_INFLUENCED_BY_QUERY.replace("%programming_language_subject%", str(subject))
+    result = g.query(query)
+    influenced_by_subjects = {}
+    for influenced_by, label in result:
+        influenced_by_subjects[label.strip()] = influenced_by
+    return influenced_by_subjects
+    
+
 if __name__ == "__main__":
     input_file = "./data/survey_results_public_cleaned.json"
     if not os.path.isfile(input_file):
@@ -73,23 +98,33 @@ if __name__ == "__main__":
 
     g = create_graph()
 
-    programming_language_subjects = get_programming_language_subjects(preprocessed_languages_people_have_worked_with)
-    # programming_language_subjects = get_programming_language_subjects(["Python"])
-
+    # Get actual programming language subjects
+    # programming_language_subjects = get_programming_language_subjects(preprocessed_languages_people_have_worked_with)
+    programming_language_subjects = get_programming_language_subjects(["Python"])
     print("Found the following subjects")
     for label, subject in programming_language_subjects.items():
         print(f"{label} => {subject}")
 
     # Query for detail information using the found subjects
-    for language_label, subject in programming_language_subjects.items():
-        query = PROGRAMMING_LANGUAGE_HAS_USE_QUERY.replace("%programming_language_subject%", str(subject))
-        result = g.query(query)
-        if len(result) == 0:
-            print(f"Found no use cases for language {language_label}")
-        else:
-            has_use_literal_values = []
-            for has_use in result:
-                for literal in has_use:
-                    has_use_literal_values.append(literal.value)
-            print(f"Found the following use cases for language {language_label} => {', '.join(has_use_literal_values)}")
+    for programming_language_label, programming_language_subject in programming_language_subjects.items():
+        
+        # Use cases
+        use_case_subjects = get_programming_language_use_case_subjects(programming_language_subject)
+        print(f"Found the following use cases for language {programming_language_label}")
+        for use_case_label, use_case_subject in use_case_subjects.items():
+            print(f"{use_case_label} => {use_case_subject}")
+
+        # Programming Paradigm
+        paradigm_subjects = get_programming_language_paradigm_subjects(programming_language_subject)
+        print(f"Found the following paradigms for language {programming_language_label}")
+        for paradigm_label, paradigm_subject in paradigm_subjects.items():
+            print(f"{paradigm_label} => {paradigm_subject}")
+
+        # Influenced by
+        influenced_by_subjects = get_programming_language_influenced_by_subjects(programming_language_subject)
+        print(f"Found the following influences for language {programming_language_label}")
+        for influenced_by_label, influenced_by_subject in influenced_by_subjects.items():
+            print(f"{influenced_by_label} => {influenced_by_subject}")
+
+
 
