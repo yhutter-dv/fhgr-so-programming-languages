@@ -1,8 +1,13 @@
 import os
 import json
 from rdflib import Graph, Namespace, BNode, Literal
+from owlready2 import get_ontology
 
 from queries import *
+
+ONTOLOGY_FILE_PATH = "./data/fhgr-so-programming-languages.rdf"
+ONTOLOGY_SAVE_PATH = "./data/fhgr-so-programming-languages-output.rdf"
+DATA_FILE_PATH = "./data/survey_results_public_cleaned.json"
 
 def create_graph():
     g = Graph()
@@ -10,7 +15,6 @@ def create_graph():
     # Define namespaces.
     # List of RDF Namespaces can be found here: https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format#Predicates
     namespaces = {
-        "default": Namespace("http://www.fhgr.ch/ke-e/yhutter/so-programming-languages"),
         "wd": Namespace("http://www.wikidata.org/entity/"),
         "wdt": Namespace("http://www.wikidata.org/prop/direct/"),
     }
@@ -76,15 +80,17 @@ def get_programming_language_influenced_by_subjects(programming_language_subject
     for influenced_by, label in result:
         influenced_by_subjects[label.strip()] = influenced_by
     return influenced_by_subjects
-    
+
+def ensure_file(file_path):
+    if not os.path.isfile(file_path):
+        system.exit(f"Expected file '{file_path}' but was not found...")
 
 if __name__ == "__main__":
-    input_file = "./data/survey_results_public_cleaned.json"
-    if not os.path.isfile(input_file):
-        print(f"Expected file '{input_file}' was not found...")
-        exit(1)
+    ensure_file(DATA_FILE_PATH)
+    ensure_file(ONTOLOGY_FILE_PATH)
 
-    with open(input_file, "r") as f:
+    # Load cleaned data file
+    with open(DATA_FILE_PATH, "r") as f:
         survey_results = json.load(f)
 
     # Extract languages which people have worked with.
@@ -96,35 +102,63 @@ if __name__ == "__main__":
     for language in languages_people_have_worked_with:
         preprocessed_languages_people_have_worked_with += language.split('/')
 
+
+    # Load ontologie
+    onto = get_ontology(f"file://{ONTOLOGY_FILE_PATH}").load()
+
+    # Create graph used for SPARQL Queries...
     g = create_graph()
 
     # Get actual programming language subjects
-    # programming_language_subjects = get_programming_language_subjects(preprocessed_languages_people_have_worked_with)
-    programming_language_subjects = get_programming_language_subjects(["Python"])
+    programming_language_subjects = get_programming_language_subjects(preprocessed_languages_people_have_worked_with)
+    # programming_language_subjects = get_programming_language_subjects(["Python"])
     print("Found the following subjects")
     for label, subject in programming_language_subjects.items():
         print(f"{label} => {subject}")
 
-    # Query for detail information using the found subjects
-    for programming_language_label, programming_language_subject in programming_language_subjects.items():
-        
-        # Use cases
-        use_case_subjects = get_programming_language_use_case_subjects(programming_language_subject)
-        print(f"Found the following use cases for language {programming_language_label}")
-        for use_case_label, use_case_subject in use_case_subjects.items():
-            print(f"{use_case_label} => {use_case_subject}")
 
-        # Programming Paradigm
-        paradigm_subjects = get_programming_language_paradigm_subjects(programming_language_subject)
-        print(f"Found the following paradigms for language {programming_language_label}")
-        for paradigm_label, paradigm_subject in paradigm_subjects.items():
-            print(f"{paradigm_label} => {paradigm_subject}")
+    with onto:
+        # Query for detail information using the found subjects
+        for programming_language_label, programming_language_subject in programming_language_subjects.items():
+            programming_language = onto.ProgrammingLanguage(programming_language_label)
 
-        # Influenced by
-        influenced_by_subjects = get_programming_language_influenced_by_subjects(programming_language_subject)
-        print(f"Found the following influences for language {programming_language_label}")
-        for influenced_by_label, influenced_by_subject in influenced_by_subjects.items():
-            print(f"{influenced_by_label} => {influenced_by_subject}")
+            # Use cases
+            use_case_subjects = get_programming_language_use_case_subjects(programming_language_subject)
+            use_cases = []
+            print(f"Found the following use cases for language {programming_language_label}")
+            for use_case_label, use_case_subject in use_case_subjects.items():
+                print(f"{use_case_label} => {use_case_subject}")
+                use_case = onto.ProgrammingLanguageUseCase(use_case_label)
+                use_cases.append(use_case)
+            programming_language.useCase = use_cases
+
+            # Programming Paradigm
+            paradigm_subjects = get_programming_language_paradigm_subjects(programming_language_subject)
+            paradigms = []
+            print(f"Found the following paradigms for language {programming_language_label}")
+            for paradigm_label, paradigm_subject in paradigm_subjects.items():
+                print(f"{paradigm_label} => {paradigm_subject}")
+                paradigm = onto.ProgrammingLanguageParadigm(paradigm_label)
+                paradigms.append(paradigm)
+            programming_language.paradigm = paradigms
+
+            # Influenced by
+            influenced_by_subjects = get_programming_language_influenced_by_subjects(programming_language_subject)
+            influences = []
+            print(f"Found the following influences for language {programming_language_label}")
+            for influenced_by_label, influenced_by_subject in influenced_by_subjects.items():
+                print(f"{influenced_by_label} => {influenced_by_subject}")
+                influence = onto.ProgrammingLanguageInfluencedBy(influenced_by_label)
+                influences.append(influence)
+            programming_language.influencedBy = influences
+
+        onto.save(file=ONTOLOGY_SAVE_PATH)
+
+
+
+
+
+
 
 
 
