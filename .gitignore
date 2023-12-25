@@ -1,7 +1,12 @@
 # Ignore Stackoverflow Survey file
 survey_results_public.csv
 
+# Ignore local dotenv file (used for local development only)
+.env-local
+
+# Ignore generated PDF.
 /doc/*.pdf
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -124,7 +129,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
 venv/

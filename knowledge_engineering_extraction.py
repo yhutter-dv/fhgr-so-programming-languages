@@ -1,13 +1,21 @@
 import os
 import json
+
 from rdflib import Graph, Namespace, BNode, Literal
 from owlready2 import get_ontology
+from dotenv import dotenv_values
+import requests
 
 from sparql_queries import *
+
+PRODUCTION_MODE = False
 
 BASE_ONTOLOGY_FILE_PATH = "./data/base_ontology.rdf"
 OUTPUT_ONTOLOGY_FILE_PATH = "./data/output_ontology.rdf"
 DATA_FILE_PATH = "./data/survey_results_public_cleaned.json"
+DOTENV_FILE_PATH = ".env-local" if not PRODUCTION_MODE else ".env"
+SECRETS = dotenv_values(DOTENV_FILE_PATH)
+GITHUB_SEARCH_API = "https://api.github.com/search"
 
 def create_graph():
     g = Graph()
@@ -92,6 +100,32 @@ def sanitize_programming_language_names(programming_languages):
         sanitized_names += language.split('/')
     return sanitized_names
 
+def get_most_popular_repos_for_programming_language(programming_language, number_of_results = 10):
+    # Get most popular repositories for the given programming language
+    query_string = f"language:{programming_language}&sort=stars&order=desc&per_page={number_of_results}&page=1"
+    url = f"{GITHUB_SEARCH_API}/repositories?q={query_string}"
+    headers = {
+        "X-GitHub-Api-Version": "2022-11-28",
+        "Authorization": SECRETS["GITHUB_API_TOKEN"],
+    }
+    response = requests.get(url, headers=headers)
+    status_code = response.status_code
+    # Check for none sucessful status and return empty list if something went wrong...
+    if not status_code == 200:
+        print(f"Received none successful status code {status_code} for language {programming_language}. Empty list will be returned")
+        return []
+    response_json = response.json()
+    repos = []
+    for item in response_json["items"]:
+        repo = {
+            "url": item["html_url"],
+            "name": item["full_name"],
+            "number_of_stars": item["stargazers_count"],
+            "description": item["description"]
+        }
+        repos.append(repo)
+    return repos
+
 def add_programming_languages_to_onto(onto, g, programming_languages, create_onto_programming_language_instance_func):
     with onto:
         programming_language_subjects = get_programming_language_subjects(programming_languages)
@@ -136,6 +170,23 @@ def add_programming_languages_to_onto(onto, g, programming_languages, create_ont
                 influence = onto.ProgrammingLanguageInfluencedBy(influenced_by_label, wikiDataUrl=[str(influenced_by_subject)])
                 influences.append(influence)
             programming_language.influencedBy = influences
+
+            # Popular GitHub Repos
+            repos = get_most_popular_repos_for_programming_language(programming_language_label)
+            popular_repos = []
+
+            # Note that repos is just a list of Python Dicitonaries, we need to instantiate conrete instances...
+            for repo in repos:
+                popular_repo = onto.ProgrammingLanguagePopularRepo()
+                popular_repo.repoDescription = [repo["description"]]
+                popular_repo.repoNumberOfStars = [repo["number_of_stars"]]
+                popular_repo.repoUrl = [repo["url"]]
+                popular_repo.repoName = [repo["name"]]
+
+                popular_repos.append(popular_repo)
+
+            programming_language.popularRepo = popular_repos
+
     return onto
 
 if __name__ == "__main__":
@@ -162,9 +213,6 @@ if __name__ == "__main__":
 
     onto = add_programming_languages_to_onto(onto, g, languages_people_have_worked_with, lambda label: onto.ProgrammingLanguagePeopleHaveWorkedWith(label))
     onto = add_programming_languages_to_onto(onto, g, languages_people_want_to_work_with, lambda label: onto.ProgrammingLanguagePeopleWantToWorkWith(label))
-
-    # onto = add_programming_languages_to_onto(onto, g, ["Python"], lambda label: onto.ProgrammingLanguagePeopleHaveWorkedWith(label))
-    # onto = add_programming_languages_to_onto(onto, g, ["C#"], lambda label: onto.ProgrammingLanguagePeopleWantToWorkWith(label))
 
     # Save ontology
     onto.save(file=OUTPUT_ONTOLOGY_FILE_PATH)

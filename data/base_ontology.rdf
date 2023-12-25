@@ -63,6 +63,15 @@
     
 
 
+    <!-- https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#popularRepo -->
+
+    <owl:ObjectProperty rdf:about="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#popularRepo">
+        <rdfs:domain rdf:resource="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#ProgrammingLanguage"/>
+        <rdfs:range rdf:resource="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#ProgrammingLanguagePopularRepo"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#useCase -->
 
     <owl:ObjectProperty rdf:about="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#useCase">
@@ -80,6 +89,42 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#repoDescription -->
+
+    <owl:DatatypeProperty rdf:about="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#repoDescription">
+        <rdfs:domain rdf:resource="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#ProgrammingLanguagePopularRepo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#repoName -->
+
+    <owl:DatatypeProperty rdf:about="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#repoName">
+        <rdfs:domain rdf:resource="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#ProgrammingLanguagePopularRepo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#repoNumberOfStars -->
+
+    <owl:DatatypeProperty rdf:about="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#repoNumberOfStars">
+        <rdfs:domain rdf:resource="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#ProgrammingLanguagePopularRepo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#repoUrl -->
+
+    <owl:DatatypeProperty rdf:about="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#repoUrl">
+        <rdfs:domain rdf:resource="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#ProgrammingLanguagePopularRepo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -154,6 +199,12 @@
     <owl:Class rdf:about="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#ProgrammingLanguagePeopleWantToWorkWith">
         <rdfs:subClassOf rdf:resource="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#ProgrammingLanguage"/>
     </owl:Class>
+    
+
+
+    <!-- https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#ProgrammingLanguagePopularRepo -->
+
+    <owl:Class rdf:about="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#ProgrammingLanguagePopularRepo"/>
     
 
 
