@@ -105,6 +105,7 @@ def add_programming_languages_to_onto(onto, g, programming_languages, create_ont
             # Depending on the programming languages (can be the ones people are already working with or want to work with) we need to create another type of instance (e.g onto.ProgrammingLanguagePeopleHaveWorkedWith or onto.ProgrammingLanguagePeopleWantToWorkWith).
             # We delegate this task to the appropriate function which is passed in as an argument.
             programming_language = create_onto_programming_language_instance_func(programming_language_label)
+            programming_language.wikiDataUrl = [str(programming_language_subject)]
 
             # Use cases
             use_case_subjects = get_programming_language_use_case_subjects(programming_language_subject)
@@ -112,7 +113,7 @@ def add_programming_languages_to_onto(onto, g, programming_languages, create_ont
             print(f"Found the following use cases for language {programming_language_label}")
             for use_case_label, use_case_subject in use_case_subjects.items():
                 print(f"{use_case_label} => {use_case_subject}")
-                use_case = onto.ProgrammingLanguageUseCase(use_case_label)
+                use_case = onto.ProgrammingLanguageUseCase(use_case_label, wikiDataUrl=[str(use_case_subject)])
                 use_cases.append(use_case)
             programming_language.useCase = use_cases
 
@@ -122,7 +123,7 @@ def add_programming_languages_to_onto(onto, g, programming_languages, create_ont
             print(f"Found the following paradigms for language {programming_language_label}")
             for paradigm_label, paradigm_subject in paradigm_subjects.items():
                 print(f"{paradigm_label} => {paradigm_subject}")
-                paradigm = onto.ProgrammingLanguageParadigm(paradigm_label)
+                paradigm = onto.ProgrammingLanguageParadigm(paradigm_label, wikiDataUrl=[str(paradigm_subject)])
                 paradigms.append(paradigm)
             programming_language.paradigm = paradigms
 
@@ -132,7 +133,7 @@ def add_programming_languages_to_onto(onto, g, programming_languages, create_ont
             print(f"Found the following influences for language {programming_language_label}")
             for influenced_by_label, influenced_by_subject in influenced_by_subjects.items():
                 print(f"{influenced_by_label} => {influenced_by_subject}")
-                influence = onto.ProgrammingLanguageInfluencedBy(influenced_by_label)
+                influence = onto.ProgrammingLanguageInfluencedBy(influenced_by_label, wikiDataUrl=[str(influenced_by_subject)])
                 influences.append(influence)
             programming_language.influencedBy = influences
     return onto
@@ -159,11 +160,11 @@ if __name__ == "__main__":
     # Create graph used for SPARQL Queries...
     g = create_graph()
 
-    onto = add_programming_languages_to_onto(onto, g, languages_people_have_worked_with, lambda label: onto.ProgrammingLanguagePeopleHaveWorkedWith(label))
-    onto = add_programming_languages_to_onto(onto, g, languages_people_want_to_work_with, lambda label: onto.ProgrammingLanguagePeopleWantToWorkWith(label))
+    # onto = add_programming_languages_to_onto(onto, g, languages_people_have_worked_with, lambda label: onto.ProgrammingLanguagePeopleHaveWorkedWith(label))
+    # onto = add_programming_languages_to_onto(onto, g, languages_people_want_to_work_with, lambda label: onto.ProgrammingLanguagePeopleWantToWorkWith(label))
 
-    # onto = add_programming_languages_to_onto(onto, g, ["Python"], lambda label: onto.ProgrammingLanguagePeopleHaveWorkedWith(label))
-    # onto = add_programming_languages_to_onto(onto, g, ["C#"], lambda label: onto.ProgrammingLanguagePeopleWantToWorkWith(label))
+    onto = add_programming_languages_to_onto(onto, g, ["Python"], lambda label: onto.ProgrammingLanguagePeopleHaveWorkedWith(label))
+    onto = add_programming_languages_to_onto(onto, g, ["C#"], lambda label: onto.ProgrammingLanguagePeopleWantToWorkWith(label))
 
     # Save ontology
     onto.save(file=OUTPUT_ONTOLOGY_FILE_PATH)

@@ -75,6 +75,26 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#wikiDataUrl -->
+
+    <owl:DatatypeProperty rdf:about="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#wikiDataUrl">
+        <rdfs:domain rdf:resource="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#ComputerLanguage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
