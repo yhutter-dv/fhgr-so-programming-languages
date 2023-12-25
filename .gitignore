@@ -1,3 +1,6 @@
+# Ignore Stackoverflow Survey file
+survey_results_public.csv
+
 /doc/*.pdf
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -160,11 +160,11 @@ if __name__ == "__main__":
     # Create graph used for SPARQL Queries...
     g = create_graph()
 
-    # onto = add_programming_languages_to_onto(onto, g, languages_people_have_worked_with, lambda label: onto.ProgrammingLanguagePeopleHaveWorkedWith(label))
-    # onto = add_programming_languages_to_onto(onto, g, languages_people_want_to_work_with, lambda label: onto.ProgrammingLanguagePeopleWantToWorkWith(label))
+    onto = add_programming_languages_to_onto(onto, g, languages_people_have_worked_with, lambda label: onto.ProgrammingLanguagePeopleHaveWorkedWith(label))
+    onto = add_programming_languages_to_onto(onto, g, languages_people_want_to_work_with, lambda label: onto.ProgrammingLanguagePeopleWantToWorkWith(label))
 
-    onto = add_programming_languages_to_onto(onto, g, ["Python"], lambda label: onto.ProgrammingLanguagePeopleHaveWorkedWith(label))
-    onto = add_programming_languages_to_onto(onto, g, ["C#"], lambda label: onto.ProgrammingLanguagePeopleWantToWorkWith(label))
+    # onto = add_programming_languages_to_onto(onto, g, ["Python"], lambda label: onto.ProgrammingLanguagePeopleHaveWorkedWith(label))
+    # onto = add_programming_languages_to_onto(onto, g, ["C#"], lambda label: onto.ProgrammingLanguagePeopleWantToWorkWith(label))
 
     # Save ontology
     onto.save(file=OUTPUT_ONTOLOGY_FILE_PATH)
