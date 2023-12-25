@@ -3,10 +3,10 @@ import json
 from rdflib import Graph, Namespace, BNode, Literal
 from owlready2 import get_ontology
 
-from queries import *
+from sparql_queries import *
 
-ONTOLOGY_FILE_PATH = "./data/fhgr-so-programming-languages.rdf"
-ONTOLOGY_SAVE_PATH = "./data/fhgr-so-programming-languages-output.rdf"
+BASE_ONTOLOGY_FILE_PATH = "./data/base_ontology.rdf"
+OUTPUT_ONTOLOGY_FILE_PATH = "./data/output_ontology.rdf"
 DATA_FILE_PATH = "./data/survey_results_public_cleaned.json"
 
 def create_graph():
@@ -87,7 +87,7 @@ def ensure_file(file_path):
 
 if __name__ == "__main__":
     ensure_file(DATA_FILE_PATH)
-    ensure_file(ONTOLOGY_FILE_PATH)
+    ensure_file(BASE_ONTOLOGY_FILE_PATH)
 
     # Load cleaned data file
     with open(DATA_FILE_PATH, "r") as f:
@@ -104,14 +104,14 @@ if __name__ == "__main__":
 
 
     # Load ontologie
-    onto = get_ontology(f"file://{ONTOLOGY_FILE_PATH}").load()
+    onto = get_ontology(f"file://{BASE_ONTOLOGY_FILE_PATH}").load()
 
     # Create graph used for SPARQL Queries...
     g = create_graph()
 
     # Get actual programming language subjects
-    programming_language_subjects = get_programming_language_subjects(preprocessed_languages_people_have_worked_with)
-    # programming_language_subjects = get_programming_language_subjects(["Python"])
+    # programming_language_subjects = get_programming_language_subjects(preprocessed_languages_people_have_worked_with)
+    programming_language_subjects = get_programming_language_subjects(["Python"])
     print("Found the following subjects")
     for label, subject in programming_language_subjects.items():
         print(f"{label} => {subject}")
@@ -152,7 +152,8 @@ if __name__ == "__main__":
                 influences.append(influence)
             programming_language.influencedBy = influences
 
-        onto.save(file=ONTOLOGY_SAVE_PATH)
+        # Save ontology
+        onto.save(file=OUTPUT_ONTOLOGY_FILE_PATH)
 
 
 
