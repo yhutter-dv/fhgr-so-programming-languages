@@ -6,7 +6,8 @@ A simple web application using `rdflib`, `owlready2` and the Stackoverflow Annua
 |Script|Description|
 |-------|-----|
 |`clean_data.py`| Generats a JSON File from the Stackoverflow CSV File.|
-|`knowledge_engineering_extraction.py`| Generates an Ontology based on JSON File (see Script `clean_data.py`.|
+|`knowledge_engineering_extraction.py`| Generates an Ontology based on JSON File (see Script `clean_data.py`).|
+|`streamlit_app.py`| Starts a Streamlit App in order to explore the generated Ontology in a Dashboard.|
 
 ## :rocket: Setup
 
@@ -39,10 +40,19 @@ chmod +x doc.sh
 ./doc.sh
 ```
 
+## :chart_with_upwards_trend: Streamlit
+A simple Dashboard was created with Streamlit. In order to launch it simply execute the following command:
+
+```bash
+streamlit run app.py
+```
+
 ## :clap: Used References
+
 |Link|Description|
 |-------|-----|
 |[Stackoverflow Annual Developer Survey](https://insights.stackoverflow.com/survey)| Stackoverflow Annual Developer Survey Dataset|
 |[GitHub REST API](https://docs.github.com/en/rest/search?apiVersion=2022-11-28)| Documentation about GitHub REST API|
 |[GitHub REST API Rate Limits](https://docs.github.com/en/rest/rate-limit/rate-limit?apiVersion=2022-11-28)| Rate Limits on GitHub REST API|
+|[Streamlit](https://streamlit.io/)| A very Framework to create simple Web Apps.|
 
