@@ -58,7 +58,7 @@ def get_programming_language_subjects(programming_languages):
     return programming_language_subjects
 
 def get_programming_language_use_case_subjects(programming_language_subject):
-    query = PROGRAMMING_LANGUAGE_USE_CASES_QUERY.replace("%programming_language_subject%", str(subject))
+    query = PROGRAMMING_LANGUAGE_USE_CASES_QUERY.replace("%programming_language_subject%", str(programming_language_subject))
     result = g.query(query)
     use_case_subjects = {}
     for use_case, label in result:
@@ -66,7 +66,7 @@ def get_programming_language_use_case_subjects(programming_language_subject):
     return use_case_subjects
 
 def get_programming_language_paradigm_subjects(programming_language_subject):
-    query = PROGRAMMING_LANGUAGE_PARADIGM_QUERY.replace("%programming_language_subject%", str(subject))
+    query = PROGRAMMING_LANGUAGE_PARADIGM_QUERY.replace("%programming_language_subject%", str(programming_language_subject))
     result = g.query(query)
     paradigm_subjects = {}
     for paradigm, label in result:
@@ -74,7 +74,7 @@ def get_programming_language_paradigm_subjects(programming_language_subject):
     return paradigm_subjects
 
 def get_programming_language_influenced_by_subjects(programming_language_subject):
-    query = PROGRAMMING_LANGUAGE_INFLUENCED_BY_QUERY.replace("%programming_language_subject%", str(subject))
+    query = PROGRAMMING_LANGUAGE_INFLUENCED_BY_QUERY.replace("%programming_language_subject%", str(programming_language_subject))
     result = g.query(query)
     influenced_by_subjects = {}
     for influenced_by, label in result:
@@ -85,42 +85,26 @@ def ensure_file(file_path):
     if not os.path.isfile(file_path):
         system.exit(f"Expected file '{file_path}' but was not found...")
 
-if __name__ == "__main__":
-    ensure_file(DATA_FILE_PATH)
-    ensure_file(BASE_ONTOLOGY_FILE_PATH)
+def sanitize_programming_language_names(programming_languages):
+    sanitized_names = []
+    # Split up names which have a '/' character into two individual names.
+    for language in programming_languages:
+        sanitized_names += language.split('/')
+    return sanitized_names
 
-    # Load cleaned data file
-    with open(DATA_FILE_PATH, "r") as f:
-        survey_results = json.load(f)
-
-    # Extract languages which people have worked with.
-    languages_people_have_worked_with = [
-        entry["language"].strip() for entry in survey_results["languagesPeopleHaveWorkedWith"]]
-
-    # Preprocess languages (e.g remove '/', character and split into two)
-    preprocessed_languages_people_have_worked_with = []
-    for language in languages_people_have_worked_with:
-        preprocessed_languages_people_have_worked_with += language.split('/')
-
-
-    # Load ontologie
-    onto = get_ontology(f"file://{BASE_ONTOLOGY_FILE_PATH}").load()
-
-    # Create graph used for SPARQL Queries...
-    g = create_graph()
-
-    # Get actual programming language subjects
-    # programming_language_subjects = get_programming_language_subjects(preprocessed_languages_people_have_worked_with)
-    programming_language_subjects = get_programming_language_subjects(["Python"])
-    print("Found the following subjects")
-    for label, subject in programming_language_subjects.items():
-        print(f"{label} => {subject}")
-
-
+def add_programming_languages_to_onto(onto, g, programming_languages, create_onto_programming_language_instance_func):
     with onto:
+        programming_language_subjects = get_programming_language_subjects(programming_languages)
+        
+        print("Found the following subjects")
+        for label, subject in programming_language_subjects.items():
+            print(f"{label} => {subject}")
+
         # Query for detail information using the found subjects
         for programming_language_label, programming_language_subject in programming_language_subjects.items():
-            programming_language = onto.ProgrammingLanguage(programming_language_label)
+            # Depending on the programming languages (can be the ones people are already working with or want to work with) we need to create another type of instance (e.g onto.ProgrammingLanguagePeopleHaveWorkedWith or onto.ProgrammingLanguagePeopleWantToWorkWith).
+            # We delegate this task to the appropriate function which is passed in as an argument.
+            programming_language = create_onto_programming_language_instance_func(programming_language_label)
 
             # Use cases
             use_case_subjects = get_programming_language_use_case_subjects(programming_language_subject)
@@ -151,9 +135,38 @@ if __name__ == "__main__":
                 influence = onto.ProgrammingLanguageInfluencedBy(influenced_by_label)
                 influences.append(influence)
             programming_language.influencedBy = influences
+    return onto
 
-        # Save ontology
-        onto.save(file=OUTPUT_ONTOLOGY_FILE_PATH)
+if __name__ == "__main__":
+    ensure_file(DATA_FILE_PATH)
+    ensure_file(BASE_ONTOLOGY_FILE_PATH)
+
+    # Load cleaned data file
+    with open(DATA_FILE_PATH, "r") as f:
+        survey_results = json.load(f)
+
+    # Extract languages.
+    languages_people_have_worked_with = [entry["language"].strip() for entry in survey_results["languagesPeopleHaveWorkedWith"]]
+    languages_people_want_to_work_with = [entry["language"].strip() for entry in survey_results["languagesPeopleWantToWorkWith"]]
+
+    # Sanitize languages
+    languages_people_have_worked_with = sanitize_programming_language_names(languages_people_have_worked_with)
+    languages_people_want_to_work_with = sanitize_programming_language_names(languages_people_want_to_work_with)
+
+    # Load ontologie
+    onto = get_ontology(f"file://{BASE_ONTOLOGY_FILE_PATH}").load()
+
+    # Create graph used for SPARQL Queries...
+    g = create_graph()
+
+    onto = add_programming_languages_to_onto(onto, g, languages_people_have_worked_with, lambda label: onto.ProgrammingLanguagePeopleHaveWorkedWith(label))
+    onto = add_programming_languages_to_onto(onto, g, languages_people_want_to_work_with, lambda label: onto.ProgrammingLanguagePeopleWantToWorkWith(label))
+
+    # onto = add_programming_languages_to_onto(onto, g, ["Python"], lambda label: onto.ProgrammingLanguagePeopleHaveWorkedWith(label))
+    # onto = add_programming_languages_to_onto(onto, g, ["C#"], lambda label: onto.ProgrammingLanguagePeopleWantToWorkWith(label))
+
+    # Save ontology
+    onto.save(file=OUTPUT_ONTOLOGY_FILE_PATH)
 
 
 

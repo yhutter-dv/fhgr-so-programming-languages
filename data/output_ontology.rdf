@@ -63,43 +63,177 @@
   <rdfs:subClassOf rdf:resource="#ProgrammingLanguage"/>
 </owl:Class>
 
-<owl:NamedIndividual rdf:about="#Python">
-  <rdf:type rdf:resource="#ProgrammingLanguage"/>
-  <useCase rdf:resource="#software development"/>
-  <useCase rdf:resource="#data analysis"/>
-  <useCase rdf:resource="#computational science"/>
+<owl:NamedIndividual rdf:about="#JavaScript">
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
   <useCase rdf:resource="#web development"/>
-  <useCase rdf:resource="#machine learning"/>
-  <paradigm rdf:resource="#object-oriented programming"/>
-  <paradigm rdf:resource="#dynamic programming"/>
-  <paradigm rdf:resource="#multi-paradigm programming"/>
+  <paradigm rdf:resource="#generic programming"/>
+  <paradigm rdf:resource="#event-driven programming"/>
+  <paradigm rdf:resource="#aspect-oriented programming"/>
   <paradigm rdf:resource="#functional programming"/>
+  <paradigm rdf:resource="#prototype-based programming"/>
   <paradigm rdf:resource="#imperative programming"/>
-  <influencedBy rdf:resource="#Modula-3"/>
-  <influencedBy rdf:resource="#CLU"/>
   <influencedBy rdf:resource="#Perl"/>
-  <influencedBy rdf:resource="#Dylan"/>
-  <influencedBy rdf:resource="#C++"/>
-  <influencedBy rdf:resource="#Haskell"/>
-  <influencedBy rdf:resource="#APL"/>
+  <influencedBy rdf:resource="#Python"/>
+  <influencedBy rdf:resource="#Scheme"/>
   <influencedBy rdf:resource="#C"/>
-  <influencedBy rdf:resource="#ABC"/>
+  <influencedBy rdf:resource="#Lua"/>
   <influencedBy rdf:resource="#Java"/>
-  <influencedBy rdf:resource="#Lisp"/>
-  <influencedBy rdf:resource="#Standard ML"/>
-  <influencedBy rdf:resource="#ALGOL 68"/>
-  <influencedBy rdf:resource="#Icon"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#machine learning">
-  <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#computational science">
-  <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
+  <influencedBy rdf:resource="#AWK"/>
+  <influencedBy rdf:resource="#LiveScript"/>
+  <influencedBy rdf:resource="#HyperTalk"/>
+  <influencedBy rdf:resource="#Self"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#web development">
+  <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#generic programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#event-driven programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#imperative programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#functional programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#prototype-based programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#aspect-oriented programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <paradigm rdf:resource="#procedural programming"/>
+  <paradigm rdf:resource="#imperative programming"/>
+  <paradigm rdf:resource="#structured programming"/>
+  <influencedBy rdf:resource="#assembly language"/>
+  <influencedBy rdf:resource="#ALGOL 68"/>
+  <influencedBy rdf:resource="#ALGOL 60"/>
+  <influencedBy rdf:resource="#B"/>
+  <influencedBy rdf:resource="#ALGOL"/>
+  <influencedBy rdf:resource="#PL/I"/>
+  <influencedBy rdf:resource="#BCPL"/>
+  <influencedBy rdf:resource="#CPL"/>
+  <influencedBy rdf:resource="#Fortran"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Java">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <paradigm rdf:resource="#structured programming"/>
+  <paradigm rdf:resource="#object-oriented programming"/>
+  <paradigm rdf:resource="#functional programming"/>
+  <paradigm rdf:resource="#class-based programming"/>
+  <paradigm rdf:resource="#concurrent object-oriented programming"/>
+  <paradigm rdf:resource="#generic programming"/>
+  <paradigm rdf:resource="#component-based software engineering"/>
+  <paradigm rdf:resource="#reflective programming"/>
+  <paradigm rdf:resource="#imperative programming"/>
+  <influencedBy rdf:resource="#boxing"/>
+  <influencedBy rdf:resource="#Ada"/>
+  <influencedBy rdf:resource="#Oberon"/>
+  <influencedBy rdf:resource="#C#"/>
+  <influencedBy rdf:resource="#Objective-C"/>
+  <influencedBy rdf:resource="#Simula 67"/>
+  <influencedBy rdf:resource="#variadic function"/>
+  <influencedBy rdf:resource="#foreach loop"/>
+  <influencedBy rdf:resource="#UCSD Pascal"/>
+  <influencedBy rdf:resource="#Simula"/>
+  <influencedBy rdf:resource="#Niklaus Wirth"/>
+  <influencedBy rdf:resource="#Eiffel"/>
+  <influencedBy rdf:resource="#Patrick Naughton"/>
+  <influencedBy rdf:resource="#Modula-3"/>
+  <influencedBy rdf:resource="#Mesa"/>
+  <influencedBy rdf:resource="#Java annotation"/>
+  <influencedBy rdf:resource="#Smalltalk"/>
+  <influencedBy rdf:resource="#Object Pascal"/>
+  <influencedBy rdf:resource="#C"/>
+  <influencedBy rdf:resource="#C++"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Python">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <useCase rdf:resource="#web development"/>
+  <useCase rdf:resource="#machine learning"/>
+  <useCase rdf:resource="#software development"/>
+  <useCase rdf:resource="#data analysis"/>
+  <useCase rdf:resource="#computational science"/>
+  <paradigm rdf:resource="#multi-paradigm programming"/>
+  <paradigm rdf:resource="#dynamic programming"/>
+  <paradigm rdf:resource="#object-oriented programming"/>
+  <paradigm rdf:resource="#functional programming"/>
+  <paradigm rdf:resource="#imperative programming"/>
+  <influencedBy rdf:resource="#Perl"/>
+  <influencedBy rdf:resource="#Haskell"/>
+  <influencedBy rdf:resource="#Standard ML"/>
+  <influencedBy rdf:resource="#ALGOL 68"/>
+  <influencedBy rdf:resource="#APL"/>
+  <influencedBy rdf:resource="#Lisp"/>
+  <influencedBy rdf:resource="#Modula-3"/>
+  <influencedBy rdf:resource="#CLU"/>
+  <influencedBy rdf:resource="#C"/>
+  <influencedBy rdf:resource="#ABC"/>
+  <influencedBy rdf:resource="#Java"/>
+  <influencedBy rdf:resource="#C++"/>
+  <influencedBy rdf:resource="#Dylan"/>
+  <influencedBy rdf:resource="#Icon"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lua">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Scheme">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#HyperTalk">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#AWK">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Perl">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Self">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#LiveScript">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#HTML">
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CSS">
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#computational science">
   <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
 </owl:NamedIndividual>
 
@@ -107,19 +241,15 @@
   <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
 </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="#machine learning">
+  <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
+</owl:NamedIndividual>
+
 <owl:NamedIndividual rdf:about="#data analysis">
   <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#functional programming">
-  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
-</owl:NamedIndividual>
-
 <owl:NamedIndividual rdf:about="#object-oriented programming">
-  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#imperative programming">
   <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
 </owl:NamedIndividual>
 
@@ -131,27 +261,28 @@
   <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Java">
-  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
-</owl:NamedIndividual>
-
 <owl:NamedIndividual rdf:about="#C++">
   <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <useCase rdf:resource="#systems programming"/>
+  <paradigm rdf:resource="#procedural programming"/>
+  <paradigm rdf:resource="#multi-paradigm programming"/>
+  <paradigm rdf:resource="#generic programming"/>
+  <paradigm rdf:resource="#object-oriented programming"/>
+  <paradigm rdf:resource="#functional programming"/>
+  <influencedBy rdf:resource="#CLU"/>
+  <influencedBy rdf:resource="#C"/>
+  <influencedBy rdf:resource="#ALGOL 68"/>
+  <influencedBy rdf:resource="#ML"/>
+  <influencedBy rdf:resource="#Ada"/>
+  <influencedBy rdf:resource="#Simula"/>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#C">
+<owl:NamedIndividual rdf:about="#Haskell">
   <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#Lisp">
-  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#Perl">
-  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#Haskell">
   <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
 </owl:NamedIndividual>
 
@@ -184,6 +315,377 @@
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#Modula-3">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#SQL">
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <useCase rdf:resource="#relational database management system"/>
+  <paradigm rdf:resource="#declarative programming"/>
+  <influencedBy rdf:resource="#Datalog"/>
+  <influencedBy rdf:resource="#first-order logic"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#relational database management system">
+  <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#declarative programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Datalog">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#first-order logic">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#TypeScript">
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <paradigm rdf:resource="#generic programming"/>
+  <paradigm rdf:resource="#event-driven programming"/>
+  <paradigm rdf:resource="#object-oriented programming"/>
+  <paradigm rdf:resource="#functional programming"/>
+  <paradigm rdf:resource="#imperative programming"/>
+  <influencedBy rdf:resource="#JavaScript"/>
+  <influencedBy rdf:resource="#C#"/>
+  <influencedBy rdf:resource="#CoffeeScript"/>
+  <influencedBy rdf:resource="#Java"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C#">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <paradigm rdf:resource="#multi-paradigm programming"/>
+  <paradigm rdf:resource="#strict programming"/>
+  <paradigm rdf:resource="#structured programming"/>
+  <paradigm rdf:resource="#object-oriented programming"/>
+  <paradigm rdf:resource="#functional programming"/>
+  <paradigm rdf:resource="#class-based programming"/>
+  <paradigm rdf:resource="#generic programming"/>
+  <paradigm rdf:resource="#event-driven programming"/>
+  <paradigm rdf:resource="#reflective programming"/>
+  <paradigm rdf:resource="#imperative programming"/>
+  <influencedBy rdf:resource="#Visual J++"/>
+  <influencedBy rdf:resource="#Haskell"/>
+  <influencedBy rdf:resource="#ML"/>
+  <influencedBy rdf:resource="#Visual Basic"/>
+  <influencedBy rdf:resource="#Cω"/>
+  <influencedBy rdf:resource="#Delphi"/>
+  <influencedBy rdf:resource="#Java"/>
+  <influencedBy rdf:resource="#Icon"/>
+  <influencedBy rdf:resource="#Eiffel"/>
+  <influencedBy rdf:resource="#Rust"/>
+  <influencedBy rdf:resource="#F#"/>
+  <influencedBy rdf:resource="#Modula-3"/>
+  <influencedBy rdf:resource="#Object Pascal"/>
+  <influencedBy rdf:resource="#C"/>
+  <influencedBy rdf:resource="#C++"/>
+  <influencedBy rdf:resource="#J#"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CoffeeScript">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#GNU Bash">
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <useCase rdf:resource="#Unix shell"/>
+  <influencedBy rdf:resource="#C shell"/>
+  <influencedBy rdf:resource="#KornShell"/>
+  <influencedBy rdf:resource="#Bourne shell"/>
+  <influencedBy rdf:resource="#ALGOL 68"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Unix shell">
+  <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bourne shell">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#KornShell">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C shell">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#concurrent object-oriented programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#structured programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#component-based software engineering">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#reflective programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#class-based programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Niklaus Wirth">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#UCSD Pascal">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Objective-C">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Simula">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Smalltalk">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Ada">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Oberon">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Mesa">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Eiffel">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Java annotation">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Object Pascal">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Patrick Naughton">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#variadic function">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#boxing">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#foreach loop">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Simula 67">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#strict programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Visual Basic">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rust">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+  <paradigm rdf:resource="#systems programming"/>
+  <paradigm rdf:resource="#concurrent computing"/>
+  <paradigm rdf:resource="#generic programming"/>
+  <paradigm rdf:resource="#object-oriented programming"/>
+  <paradigm rdf:resource="#functional programming"/>
+  <paradigm rdf:resource="#imperative programming"/>
+  <influencedBy rdf:resource="#OCaml"/>
+  <influencedBy rdf:resource="#Haskell"/>
+  <influencedBy rdf:resource="#Standard ML"/>
+  <influencedBy rdf:resource="#Limbo"/>
+  <influencedBy rdf:resource="#C#"/>
+  <influencedBy rdf:resource="#Scheme"/>
+  <influencedBy rdf:resource="#Erlang"/>
+  <influencedBy rdf:resource="#Alef"/>
+  <influencedBy rdf:resource="#Swift"/>
+  <influencedBy rdf:resource="#C++"/>
+  <influencedBy rdf:resource="#Newsqueak"/>
+  <influencedBy rdf:resource="#Cyclone"/>
+  <influencedBy rdf:resource="#Ruby"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Visual J++">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Cω">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#F#">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ML">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#J#">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Delphi">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#systems programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#procedural programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#PL/I">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ALGOL">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#B">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#BCPL">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#assembly language">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Fortran">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CPL">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ALGOL 60">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#concurrent computing">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Cyclone">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Ruby">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Newsqueak">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Erlang">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#OCaml">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Limbo">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Swift">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Alef">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Go">
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+  <paradigm rdf:resource="#procedural programming"/>
+  <paradigm rdf:resource="#concurrent computing"/>
+  <paradigm rdf:resource="#structured programming"/>
+  <paradigm rdf:resource="#object-oriented programming"/>
+  <paradigm rdf:resource="#functional programming"/>
+  <paradigm rdf:resource="#imperative programming"/>
+  <influencedBy rdf:resource="#Oberon-2"/>
+  <influencedBy rdf:resource="#communicating sequential processes"/>
+  <influencedBy rdf:resource="#APL"/>
+  <influencedBy rdf:resource="#Pascal"/>
+  <influencedBy rdf:resource="#Smalltalk"/>
+  <influencedBy rdf:resource="#Limbo"/>
+  <influencedBy rdf:resource="#Oberon"/>
+  <influencedBy rdf:resource="#occam"/>
+  <influencedBy rdf:resource="#C"/>
+  <influencedBy rdf:resource="#Active Oberon"/>
+  <influencedBy rdf:resource="#BCPL"/>
+  <influencedBy rdf:resource="#Alef"/>
+  <influencedBy rdf:resource="#Modula"/>
+  <influencedBy rdf:resource="#Newsqueak"/>
+  <influencedBy rdf:resource="#Modula-2"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Pascal">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Oberon-2">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Active Oberon">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Modula">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#communicating sequential processes">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Modula-2">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#occam">
   <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
 </owl:NamedIndividual>
 
