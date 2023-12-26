@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=JetBrains+Mono&display=swap');
+
+:root {
+	/* Based on the Monokai Color Scheme (yes ChatGPT did help out a bit in choosing nice colors for light and dark themes :)) */
+	--primary-bg: #FFFFFF;
+	--secondary-bg: #F5F5F5;
+	--text-color: #383830;
+	--accent-color-1: #FF6188;
+	--accent-color-4: #FD971F;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--secondary-bg);
+	padding: 0 1rem;
+	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; /* Copied from https://getcssscan.com/css-box-shadow-examples */
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			float: left;
+			margin-right: 1rem;
+
+			a {
+				color: var(--accent-color-1);
+				text-decoration: none;
+
+				&:hover {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	.header-logo {
+		font-family: 'JetBrains Mono', monospace;
+	}
+
+	.header-logo-letter {
+		font-size: 2rem;
+		margin-right: 0.1rem;
+		color: var(--accent-color-1);
+	}
+}
+
+
+body {
+	background-color: var(--primary-bg);
+	color: var(--text-color);
+	font-family: 'IBM Plex Sans', sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+main {
+	padding: 0 1rem;
+}
+
+.programming-card-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 1rem;
+}
+
+.programming-card {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--primary-bg);
+	padding: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; /* Copied from https://getcssscan.com/css-box-shadow-examples */
+
+	.programming-card-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		.programming-language-title {
+			font-weight: bold;
+
+			a {
+				color: var(--accent-color-1);
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+			
+		}
+	}
+
+	.programming-card-use-cases {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			float: left;
+			margin-right: 1rem;
+			padding: 0.2rem;
+			border-radius: 0.4rem;
+			background-color: var(--secondary-bg);
+
+			a {
+				color: var(--text-color);
+				text-decoration: none;
+
+				&:hover {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}

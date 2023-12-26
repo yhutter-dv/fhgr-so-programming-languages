@@ -7,7 +7,7 @@ A simple web application using `rdflib`, `owlready2` and the Stackoverflow Annua
 |-------|-----|
 |`clean_data.py`| Generats a JSON File from the Stackoverflow CSV File.|
 |`knowledge_engineering_extraction.py`| Generates an Ontology based on JSON File (see Script `clean_data.py`).|
-|`streamlit_app.py`| Starts a Streamlit App in order to explore the generated Ontology in a Dashboard.|
+|`app.py`| A simple Frontend written with Flask.|
 
 ## :rocket: Setup
 
@@ -40,11 +40,11 @@ chmod +x doc.sh
 ./doc.sh
 ```
 
-## :chart_with_upwards_trend: Streamlit
-A simple Dashboard was created with Streamlit. In order to launch it simply execute the following command:
+## :chart_with_upwards_trend: Web App
+A simple Dashboard was created with [Flask](https://flask.palletsprojects.com/en/3.0.x/). In order to launch it simply execute the following command:
 
 ```bash
-streamlit run app.py
+flask --app app run --debug
 ```
 
 ## :clap: Used References

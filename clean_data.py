@@ -6,8 +6,8 @@ from collections import Counter
 
 NUMBER_OF_TOP_ENTRIES = 10
 
-INPUT_FILE = "./data/survey_results_public.csv"
-OUTPUT_FILE = "./data/survey_results_public_cleaned.json"
+INPUT_FILE = "./static/data/survey_results_public.csv"
+OUTPUT_FILE = "./static/data/survey_results_public_cleaned.json"
 
 def ensure_file(file_path):
     if not os.path.isfile(file_path):

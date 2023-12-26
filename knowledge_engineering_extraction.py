@@ -10,9 +10,9 @@ from sparql_queries import *
 
 PRODUCTION_MODE = False
 
-BASE_ONTOLOGY_FILE_PATH = "./data/base_ontology.rdf"
-OUTPUT_ONTOLOGY_FILE_PATH = "./data/output_ontology.rdf"
-DATA_FILE_PATH = "./data/survey_results_public_cleaned.json"
+BASE_ONTOLOGY_FILE_PATH = "./static/data/base_ontology.rdf"
+OUTPUT_ONTOLOGY_FILE_PATH = "./static/data/output_ontology.rdf"
+DATA_FILE_PATH = "./static/data/survey_results_public_cleaned.json"
 DOTENV_FILE_PATH = ".env-local" if not PRODUCTION_MODE else ".env"
 SECRETS = dotenv_values(DOTENV_FILE_PATH)
 GITHUB_SEARCH_API = "https://api.github.com/search"
