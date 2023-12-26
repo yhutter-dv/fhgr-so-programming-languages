@@ -12,8 +12,13 @@
         <header>
             <h3 class="header-logo"><span class="header-logo-letter">S</span>tackoverflow Insights</h3>
             <ul>
-                <li><a href="#">Programming Languages People are working in</a></li>
-                <li><a href="#">Programming Languages People want to work in</a></li>
+                {% if languages_people_want_to_work_with == True %}
+                    <li><a href="{{url_for('index')}}">Programming Languages People are working in</a></li>
+                    <li><a class="active" href="{{url_for('languages_people_want_to_work_with')}}">Programming Languages People want to work in</a></li>
+                {% else %} 
+                    <li><a class="active" href="{{url_for('index')}}">Programming Languages People are working in</a></li>
+                    <li><a href="{{url_for('languages_people_want_to_work_with')}}">Programming Languages People want to work in</a></li>
+                {% endif %}    
             </ul>
         </header>
 
@@ -21,61 +26,25 @@
             <h2>Select your Programming Language</h2>
 
             <div class="programming-card-grid">
-                <div class="programming-card">
-                    <div class="programming-card-header">
-                        <h3 class="programming-language-title"><a href="#">Python</a></h3> 
-                        <p>Rank <b>1</b> out of 10</p>           
+                {% for language in programming_languages  %}
+                    <div class="programming-card">
+                        <div class="programming-card-header">
+                            <h3 class="programming-language-title"><a href="{{language.url}}" target="_blank">{{language.name}}</a></h3> 
+                            <!-- <p>Rank <b>1</b> out of 10</p> -->          
+                        </div>
+
+                        {% if language.use_cases|length > 0 %}
+                            <p><b>Use Cases</b></p>
+                            <ul class="programming-card-use-cases">
+                                {% for use_case in language.use_cases %}
+                                    <li><a href="{{use_case.url}}" target="_blank">#{{use_case.name}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p><b>No Use Cases</b></p>
+                        {% endif %}
                     </div>
-
-                    <p><b>Use Cases</b></p>
-                    <ul class="programming-card-use-cases">
-                        <li><a href="#">#abc</a></li>
-                        <li><a href="#">#abc</a></li>
-                        <li><a href="#">#abc</a></li>
-                    </ul>
-                </div>
-
-                <div class="programming-card">
-                    <div class="programming-card-header">
-                        <h3 class="programming-language-title"><a href="#">Python</a></h3> 
-                        <p>Rank <b>1</b> out of 10</p>           
-                    </div>
-
-                    <p><b>Use Cases</b></p>
-                    <ul class="programming-card-use-cases">
-                        <li><a href="#">#abc</a></li>
-                        <li><a href="#">#abc</a></li>
-                        <li><a href="#">#abc</a></li>
-                    </ul>
-                </div>
-
-                <div class="programming-card">
-                    <div class="programming-card-header">
-                        <h3 class="programming-language-title"><a href="#">Python</a></h3> 
-                        <p>Rank <b>1</b> out of 10</p>           
-                    </div>
-
-                    <p><b>Use Cases</b></p>
-                    <ul class="programming-card-use-cases">
-                        <li><a href="#">#abc</a></li>
-                        <li><a href="#">#abc</a></li>
-                        <li><a href="#">#abc</a></li>
-                    </ul>
-                </div>
-
-                <div class="programming-card">
-                    <div class="programming-card-header">
-                        <h3 class="programming-language-title"><a href="#">Python</a></h3> 
-                        <p>Rank <b>1</b> out of 10</p>           
-                    </div>
-
-                    <p><b>Use Cases</b></p>
-                    <ul class="programming-card-use-cases">
-                        <li><a href="#">#abc</a></li>
-                        <li><a href="#">#abc</a></li>
-                        <li><a href="#">#abc</a></li>
-                    </ul>
-                </div>
+                {% endfor %}
             </div>        
         </main>
     </body>
