@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Details</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+
+    <body>
+        <header>
+            <h3 class="header-logo"><span class="header-logo-letter">D</span>etails</h3>
+            <ul>
+                <li><a href="{{url_for('index')}}">Home</a></li>
+            </ul>
+        </header>
+        <main>
+            {% if programming_language == None %}
+                <h2>No Language provided</h2>
+            {% else %}
+                <h2>{{ programming_language.name }}</h2>
+
+                <h3>Influenced By</h3>
+                <p>TODO</p>
+
+                <h3>Paradigms</h3>
+                <p>TODO</p>
+
+                {% if programming_language.popularRepos|length == 0 %}
+                    <h3>No Popular GitHub Repos available</h3>
+                {% else %}
+                    <h3>Popular GitHub Repos</h3>
+                    <div class="programming-card-grid">
+                    {% for repo in programming_language.popularRepos  %}
+                        <div class="repo-card">
+                            <div class="repo-card-header">
+                                <h3 class="repo-card-title"><a href="{{repo.url}}" target="_blank">{{repo.name}}</a></h3>
+                                <p>{{repo.number_of_stars}} <b>Stars</b></p>
+                            </div>
+                            <div class="repo-card-description">
+                                <p>{{repo.description}}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>        
+                {% endif %}
+            {% endif %}
+        </main>
+    </body>
+
+</html>

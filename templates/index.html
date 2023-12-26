@@ -29,8 +29,8 @@
                 {% for language in programming_languages  %}
                     <div class="programming-card">
                         <div class="programming-card-header">
-                            <h3 class="programming-language-title"><a href="{{language.url}}" target="_blank">{{language.name}}</a></h3> 
-                            <!-- <p>Rank <b>1</b> out of 10</p> -->          
+                            <h3 class="programming-language-title"><a href="{{language.url}}" target="_blank">{{language.name}}</a></h3>
+                            <a class="programming-language-details" href="{{url_for('details', programming_language_name = language.name)}}">Details</a> 
                         </div>
 
                         {% if language.use_cases|length > 0 %}

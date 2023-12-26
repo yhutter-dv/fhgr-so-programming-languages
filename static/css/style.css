@@ -97,8 +97,16 @@ main {
 				&:hover {
 					text-decoration: underline;
 				}
-			}
-			
+			}	
+		}
+
+		.programming-language-details {
+			color: var(--text-color);
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}	
 		}
 	}
 
@@ -123,6 +131,41 @@ main {
 					font-weight: bold;
 				}
 			}
+		}
+	}
+}
+
+.repo-card-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 1rem;
+}
+
+.repo-card {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--primary-bg);
+	padding: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; /* Copied from https://getcssscan.com/css-box-shadow-examples */
+
+	.repo-card-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		.repo-card-title {
+			font-weight: bold;
+
+			a {
+				color: var(--accent-color-1);
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}	
 		}
 	}
 }
