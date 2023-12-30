@@ -5,17 +5,18 @@ from rdflib import Graph, Namespace, BNode, Literal
 from owlready2 import get_ontology
 from dotenv import dotenv_values
 import requests
+import sys
+import time
 
 from sparql_queries import *
 
-PRODUCTION_MODE = False
-
-BASE_ONTOLOGY_FILE_PATH = "./static/data/base_ontology.rdf"
-OUTPUT_ONTOLOGY_FILE_PATH = "./static/data/output_ontology.rdf"
-DATA_FILE_PATH = "./static/data/survey_results_public_cleaned.json"
-DOTENV_FILE_PATH = ".env-local" if not PRODUCTION_MODE else ".env"
+BASE_ONTOLOGY_FILE_PATH = "./backend/data/base_ontology.rdf"
+OUTPUT_ONTOLOGY_FILE_PATH = "./backend/data/output_ontology.rdf"
+DATA_FILE_PATH = "./backend/data/survey_results_public_cleaned.json"
+DOTENV_FILE_PATH = ".env-local"
 SECRETS = dotenv_values(DOTENV_FILE_PATH)
 GITHUB_SEARCH_API = "https://api.github.com/search"
+SLEEP_BETWEEN_GITHUB_REQUESTS_SECONDS = 5
 
 def create_graph():
     g = Graph()
@@ -91,7 +92,7 @@ def get_programming_language_influenced_by_subjects(programming_language_subject
 
 def ensure_file(file_path):
     if not os.path.isfile(file_path):
-        system.exit(f"Expected file '{file_path}' but was not found...")
+        sys.exit(f"Expected file '{file_path}' but was not found...")
 
 def sanitize_programming_language_names(programming_languages):
     sanitized_names = []
@@ -101,6 +102,7 @@ def sanitize_programming_language_names(programming_languages):
     return sanitized_names
 
 def get_most_popular_repos_for_programming_language(programming_language, number_of_results = 10):
+    print(f"Getting most popular Git Repos for language {programming_language}")
     # Get most popular repositories for the given programming language
     query_string = f"language:{programming_language}&sort=stars&order=desc&per_page={number_of_results}&page=1"
     url = f"{GITHUB_SEARCH_API}/repositories?q={query_string}"
@@ -118,12 +120,16 @@ def get_most_popular_repos_for_programming_language(programming_language, number
     repos = []
     for item in response_json["items"]:
         repo = {
-            "url": item["html_url"],
-            "name": item["full_name"],
-            "number_of_stars": item["stargazers_count"],
-            "description": item["description"]
+            "url": item.get("html_url", "#"),
+            "name": item.get("full_name", ""),
+            "number_of_stars": item.get("stargazers_count", -1),
+            "description": item.get("description", "")
         }
         repos.append(repo)
+    # Sleep in hope of not hitting the Rate Limit :)
+    print(f"Start Sleeping for {SLEEP_BETWEEN_GITHUB_REQUESTS_SECONDS} seconds due to strict Ratelimit of GitHub Search API")
+    time.sleep(SLEEP_BETWEEN_GITHUB_REQUESTS_SECONDS)
+    print("End Sleeping")
     return repos
 
 def add_programming_languages_to_onto(onto, g, programming_languages, create_onto_programming_language_instance_func):

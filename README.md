@@ -40,11 +40,26 @@ chmod +x doc.sh
 ./doc.sh
 ```
 
-## :chart_with_upwards_trend: Web App
-A simple Dashboard was created with [Flask](https://flask.palletsprojects.com/en/3.0.x/). In order to launch it simply execute the following command:
+## Frontend
+The Frontend is build with the awesome [Deno Fresh Framework](https://fresh.deno.dev/). Therefore in order for things to work please make sure you have [Deno](https://docs.deno.com/runtime/manual/getting_started/installation) installed.
+
+After that to start up the frontend simply run:
 
 ```bash
-flask --app app run --debug
+cd frontend
+deno task start
+```
+
+## Backend
+For the Frontend a simple Backend was implemented with [FastAPI](https://fastapi.tiangolo.com/).
+
+To start the backend simply run the following commands:
+
+```bash
+cd backend
+python -m venv ./venv
+source venv/bin/activate.sh
+uvicorn app:app --port 6969 --reload
 ```
 
 ## :clap: Used References
@@ -54,5 +69,4 @@ flask --app app run --debug
 |[Stackoverflow Annual Developer Survey](https://insights.stackoverflow.com/survey)| Stackoverflow Annual Developer Survey Dataset|
 |[GitHub REST API](https://docs.github.com/en/rest/search?apiVersion=2022-11-28)| Documentation about GitHub REST API|
 |[GitHub REST API Rate Limits](https://docs.github.com/en/rest/rate-limit/rate-limit?apiVersion=2022-11-28)| Rate Limits on GitHub REST API|
-|[Streamlit](https://streamlit.io/)| A very Framework to create simple Web Apps.|
 

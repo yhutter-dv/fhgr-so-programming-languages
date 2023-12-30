@@ -94,7 +94,7 @@ def get_git_repos_for_language_name(language_name):
 				for repo in element.popularRepo:
 					repo_entry = {
 						"name": repo.repoName[0],
-						"repoNumberOfStarstars": repo.repoNumberOfStars[0],
+						"numberOfStars": repo.repoNumberOfStars[0],
 						"description": repo.repoDescription[0],
 						"url": repo.repoUrl[0]
 					}
