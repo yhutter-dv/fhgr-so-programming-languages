@@ -1,0 +1,1803 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto"
+         xmlns="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto#">
+
+<owl:Ontology rdf:about="https://survey.stackoverflow.co/2023/fhgr-so-programming-languages-onto"/>
+
+<owl:ObjectProperty rdf:about="http://www.wikidata.org/prop/direct/P366">
+  <owl:equivalentProperty rdf:resource="#useCase"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#useCase">
+  <rdfs:domain rdf:resource="#ProgrammingLanguage"/>
+  <rdfs:range rdf:resource="#ProgrammingLanguageUseCase"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.wikidata.org/prop/direct/P3966">
+  <owl:equivalentProperty rdf:resource="#paradigm"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#paradigm">
+  <rdfs:domain rdf:resource="#ProgrammingLanguage"/>
+  <rdfs:range rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.wikidata.org/prop/direct/P737">
+  <owl:equivalentProperty rdf:resource="#influencedBy"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#influencedBy">
+  <rdfs:domain rdf:resource="#ProgrammingLanguage"/>
+  <rdfs:range rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#popularRepo">
+  <rdfs:domain rdf:resource="#ProgrammingLanguage"/>
+  <rdfs:range rdf:resource="#ProgrammingLanguagePopularRepo"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#repoDescription">
+  <rdfs:domain rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#repoName">
+  <rdfs:domain rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#repoNumberOfStars">
+  <rdfs:domain rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#repoUrl">
+  <rdfs:domain rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#wikiDataUrl">
+  <rdfs:domain rdf:resource="#ComputerLanguage"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#ProgrammingLanguage">
+  <owl:equivalentClass rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <rdfs:subClassOf rdf:resource="#ComputerLanguage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ProgrammingLanguageInfluencedBy">
+  <rdfs:subClassOf rdf:resource="#ComputerLanguage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ProgrammingLanguageParadigm"/>
+
+<owl:Class rdf:about="#ProgrammingLanguagePopularRepo"/>
+
+<owl:Class rdf:about="#ProgrammingLanguageUseCase"/>
+
+<owl:Class rdf:about="#ComputerLanguage"/>
+
+<owl:Class rdf:about="http://www.wikidata.org/entity/Q629206">
+  <owl:equivalentClass rdf:resource="#ComputerLanguage"/>
+  <owl:equivalentClass rdf:resource="#ProgrammingLanguageParadigm"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ProgrammingLanguagePeopleHaveWorkedWith">
+  <rdfs:subClassOf rdf:resource="#ProgrammingLanguage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ProgrammingLanguagePeopleWantToWorkWith">
+  <rdfs:subClassOf rdf:resource="#ProgrammingLanguage"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#JavaScript">
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <useCase rdf:resource="#web development"/>
+  <paradigm rdf:resource="#generic programming"/>
+  <paradigm rdf:resource="#imperative programming"/>
+  <paradigm rdf:resource="#prototype-based programming"/>
+  <paradigm rdf:resource="#aspect-oriented programming"/>
+  <paradigm rdf:resource="#event-driven programming"/>
+  <paradigm rdf:resource="#functional programming"/>
+  <influencedBy rdf:resource="#HyperTalk"/>
+  <influencedBy rdf:resource="#AWK"/>
+  <influencedBy rdf:resource="#Perl"/>
+  <influencedBy rdf:resource="#Python"/>
+  <influencedBy rdf:resource="#C"/>
+  <influencedBy rdf:resource="#Java"/>
+  <influencedBy rdf:resource="#Scheme"/>
+  <influencedBy rdf:resource="#Self"/>
+  <influencedBy rdf:resource="#Lua"/>
+  <influencedBy rdf:resource="#LiveScript"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q2005</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#web development">
+  <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q386275</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#functional programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q193076</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#prototype-based programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q180868</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#aspect-oriented programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q30267</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#generic programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1051282</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#event-driven programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1135914</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#imperative programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q275596</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Java">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <paradigm rdf:resource="#generic programming"/>
+  <paradigm rdf:resource="#imperative programming"/>
+  <paradigm rdf:resource="#class-based programming"/>
+  <paradigm rdf:resource="#functional programming"/>
+  <paradigm rdf:resource="#concurrent object-oriented programming"/>
+  <paradigm rdf:resource="#component-based software engineering"/>
+  <paradigm rdf:resource="#reflective programming"/>
+  <paradigm rdf:resource="#object-oriented programming"/>
+  <paradigm rdf:resource="#structured programming"/>
+  <influencedBy rdf:resource="#foreach loop"/>
+  <influencedBy rdf:resource="#Object Pascal"/>
+  <influencedBy rdf:resource="#Ada"/>
+  <influencedBy rdf:resource="#Java annotation"/>
+  <influencedBy rdf:resource="#Eiffel"/>
+  <influencedBy rdf:resource="#UCSD Pascal"/>
+  <influencedBy rdf:resource="#boxing"/>
+  <influencedBy rdf:resource="#Objective-C"/>
+  <influencedBy rdf:resource="#Oberon"/>
+  <influencedBy rdf:resource="#Simula 67"/>
+  <influencedBy rdf:resource="#Patrick Naughton"/>
+  <influencedBy rdf:resource="#variadic function"/>
+  <influencedBy rdf:resource="#C++"/>
+  <influencedBy rdf:resource="#C"/>
+  <influencedBy rdf:resource="#Simula"/>
+  <influencedBy rdf:resource="#Niklaus Wirth"/>
+  <influencedBy rdf:resource="#Modula-3"/>
+  <influencedBy rdf:resource="#Smalltalk"/>
+  <influencedBy rdf:resource="#Mesa"/>
+  <influencedBy rdf:resource="#C#"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q251</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <paradigm rdf:resource="#structured programming"/>
+  <paradigm rdf:resource="#procedural programming"/>
+  <paradigm rdf:resource="#imperative programming"/>
+  <influencedBy rdf:resource="#B"/>
+  <influencedBy rdf:resource="#PL/I"/>
+  <influencedBy rdf:resource="#CPL"/>
+  <influencedBy rdf:resource="#ALGOL 60"/>
+  <influencedBy rdf:resource="#ALGOL"/>
+  <influencedBy rdf:resource="#Fortran"/>
+  <influencedBy rdf:resource="#BCPL"/>
+  <influencedBy rdf:resource="#assembly language"/>
+  <influencedBy rdf:resource="#ALGOL 68"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q15777</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Python">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <useCase rdf:resource="#data analysis"/>
+  <useCase rdf:resource="#web development"/>
+  <useCase rdf:resource="#software development"/>
+  <useCase rdf:resource="#computational science"/>
+  <useCase rdf:resource="#machine learning"/>
+  <paradigm rdf:resource="#object-oriented programming"/>
+  <paradigm rdf:resource="#dynamic programming"/>
+  <paradigm rdf:resource="#imperative programming"/>
+  <paradigm rdf:resource="#multi-paradigm programming"/>
+  <paradigm rdf:resource="#functional programming"/>
+  <influencedBy rdf:resource="#Dylan"/>
+  <influencedBy rdf:resource="#Perl"/>
+  <influencedBy rdf:resource="#Haskell"/>
+  <influencedBy rdf:resource="#Icon"/>
+  <influencedBy rdf:resource="#C++"/>
+  <influencedBy rdf:resource="#C"/>
+  <influencedBy rdf:resource="#Java"/>
+  <influencedBy rdf:resource="#Lisp"/>
+  <influencedBy rdf:resource="#APL"/>
+  <influencedBy rdf:resource="#CLU"/>
+  <influencedBy rdf:resource="#Modula-3"/>
+  <influencedBy rdf:resource="#Standard ML"/>
+  <influencedBy rdf:resource="#ABC"/>
+  <influencedBy rdf:resource="#ALGOL 68"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q28865</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Perl">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q42478</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#AWK">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q213970</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lua">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q207316</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Scheme">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q187560</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#HyperTalk">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q58329</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Self">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1864529</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#LiveScript">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q16963446</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo1">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A tree component for AngularJS, without jQuery as dependency.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2583</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/angular-ui-tree/angular-ui-tree</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angular-ui-tree/angular-ui-tree</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo2">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A tool to calculate the contrast ratio between any two valid CSS colors.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2463</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/siege-media/contrast-ratio</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">siege-media/contrast-ratio</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo3">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RSS reader in go on app engine; formerly goread.io</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2387</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/mjibson/goread</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mjibson/goread</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo4">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Get and set relations (one-to-one, one-to-many, many-to-one) for Backbone models</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2343</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/PaulUithol/Backbone-relational</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PaulUithol/Backbone-relational</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo5">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">localStorage and sessionStorage done right for AngularJS.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2337</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/gsklee/ngStorage</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gsklee/ngStorage</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo6">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JQuery powered parallaxing</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2292</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/cameronmcefee/plax</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cameronmcefee/plax</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo7">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The jQuery Plugin for Big Background Video (and Images)</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2260</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/johnpolacek/BigVideo.js</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">johnpolacek/BigVideo.js</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo8">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">react-redux-tutorial in Chinese, catalog &amp;&amp; code examples</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2231</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/lewis617/react-redux-tutorial</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lewis617/react-redux-tutorial</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo9">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Starter Repository for AngularJS Material</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2214</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/angular/material-start</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angular/material-start</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo10">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">专门用于微信公众平台的Javascript API</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2204</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/zxlie/WeixinApi</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">zxlie/WeixinApi</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#HTML">
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q8811</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo11">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zepto.js is a minimalist JavaScript library for modern browsers, with a jQuery-compatible API</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15002</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/madrobby/zepto</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">madrobby/zepto</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo12">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">:page_facing_up: A curated list of awesome Angular resources</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9124</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/PatrickJS/awesome-angular</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PatrickJS/awesome-angular</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo13">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Twitter Bootstrap for Rails 6.0, Rails 5 - Rails 4.x Asset Pipeline</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4507</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/seyhunak/twitter-bootstrap-rails</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seyhunak/twitter-bootstrap-rails</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo14">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Learn the basics of web design in 4 minutes</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4328</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/jgthms/web-design-in-4-minutes</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jgthms/web-design-in-4-minutes</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo15">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CSS for clean and fast web apps</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4262</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/topcoat/topcoat</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">topcoat/topcoat</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo16">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Progressive &lt;svg&gt; pie, donut, bar and line charts</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4221</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/benpickles/peity</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">benpickles/peity</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo17">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">:blue_book: Home Assistant User documentation</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4128</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/home-assistant/home-assistant.io</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">home-assistant/home-assistant.io</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo18">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🕑 Modern Timeline Component for React</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3708</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/prabhuignoto/react-chrono</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prabhuignoto/react-chrono</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo19">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A simple tool to identify and upgrade old browsers.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3542</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/outdatedbrowser/outdated-browser</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">outdatedbrowser/outdated-browser</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo20">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Javascript HTML5 (Ca)nvas (Man)ipulation</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3527</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/meltingice/CamanJS</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">meltingice/CamanJS</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CSS">
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q46441</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo21">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🍿 A cross-browser library of CSS animations. As easy to use as an easy thing.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">79109</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/animate-css/animate.css</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">animate-css/animate.css</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo22">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A modern alternative to CSS resets</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">51333</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/necolas/normalize.css</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">necolas/normalize.css</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo23">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Iconic font aggregator, collection, &amp; patcher. 3,600+ icons, 50+ patched fonts: Hack, Source Code Pro, more. Glyph collections: Font Awesome, Material Design Icons, Octicons, &amp; more</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48741</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/ryanoasis/nerd-fonts</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ryanoasis/nerd-fonts</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo24">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modern CSS framework based on Flexbox</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47773</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/jgthms/bulma</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jgthms/bulma</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo25">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">50+ mini web projects using HTML, CSS &amp; JS</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32149</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/bradtraversy/50projects50days</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bradtraversy/50projects50days</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo26">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017年买房经历总结出来的买房购房知识分享给大家，希望对大家有所帮助。买房不易，且买且珍惜。Sharing the knowledge of buy an own house that according  to the experience at hangzhou in 2017 to all the people. It's not easy to buy a own house, so I hope that it would be useful to everyone.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26677</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/houshanren/hangzhou_house_knowledge</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">houshanren/hangzhou_house_knowledge</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo27">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">中文版 Apple 官方 Swift 教程《The Swift Programming Language》</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20933</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/SwiftGGTeam/the-swift-programming-language-in-chinese</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SwiftGGTeam/the-swift-programming-language-in-chinese</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo28">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">不止于 CSS</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17523</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/chokcoco/iCSS</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chokcoco/iCSS</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo29">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Automatically add a progress bar to your site.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15601</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/CodeByZach/pace</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CodeByZach/pace</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo30">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Build mobile apps with simple HTML, CSS, and JavaScript components. </repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14577</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/twbs/ratchet</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">twbs/ratchet</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#machine learning">
+  <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q2539</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#computational science">
+  <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q117801</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#software development">
+  <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q638608</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#data analysis">
+  <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1988917</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#object-oriented programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q79872</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#dynamic programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q380679</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#multi-paradigm programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q4306983</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C++">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <useCase rdf:resource="#systems programming"/>
+  <paradigm rdf:resource="#generic programming"/>
+  <paradigm rdf:resource="#procedural programming"/>
+  <paradigm rdf:resource="#object-oriented programming"/>
+  <paradigm rdf:resource="#multi-paradigm programming"/>
+  <paradigm rdf:resource="#functional programming"/>
+  <influencedBy rdf:resource="#Simula"/>
+  <influencedBy rdf:resource="#ALGOL 68"/>
+  <influencedBy rdf:resource="#CLU"/>
+  <influencedBy rdf:resource="#Ada"/>
+  <influencedBy rdf:resource="#ML"/>
+  <influencedBy rdf:resource="#C"/>
+  <popularRepo rdf:resource="#programminglanguagepopularrepo120"/>
+  <popularRepo rdf:resource="#programminglanguagepopularrepo119"/>
+  <popularRepo rdf:resource="#programminglanguagepopularrepo113"/>
+  <popularRepo rdf:resource="#programminglanguagepopularrepo114"/>
+  <popularRepo rdf:resource="#programminglanguagepopularrepo118"/>
+  <popularRepo rdf:resource="#programminglanguagepopularrepo115"/>
+  <popularRepo rdf:resource="#programminglanguagepopularrepo111"/>
+  <popularRepo rdf:resource="#programminglanguagepopularrepo112"/>
+  <popularRepo rdf:resource="#programminglanguagepopularrepo116"/>
+  <popularRepo rdf:resource="#programminglanguagepopularrepo117"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q2407</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Haskell">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q34010</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lisp">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q132874</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#APL">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q296187</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Standard ML">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q597330</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ABC">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1057802</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Icon">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1156474</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CLU">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q775159</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Dylan">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1268744</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ALGOL 68">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q2166735</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Modula-3">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1928222</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo31">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A collective list of free APIs</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">272934</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/public-apis/public-apis</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">public-apis/public-apis</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo32">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">⚡ Building applications with LLMs through composability ⚡</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">72062</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/langchain-ai/langchain</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">langchain-ai/langchain</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo33">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FastAPI framework, high performance, easy to learn, fast to code, ready for production</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">66257</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/tiangolo/fastapi</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tiangolo/fastapi</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo34">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Python micro framework for building web applications.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">65295</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/pallets/flask</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pallets/flask</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo35">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A youtube-dl fork with additional features and fixes</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">62667</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/yt-dlp/yt-dlp</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">yt-dlp/yt-dlp</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo36">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A curated list of awesome Machine Learning frameworks, libraries and software.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">61978</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/josephmisiti/awesome-machine-learning</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">josephmisiti/awesome-machine-learning</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo37">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Linux, Jenkins, AWS, SRE, Prometheus, Docker, Python, Ansible, Git, Kubernetes, Terraform, OpenStack, SQL, NoSQL, Azure, GCP, DNS, Elastic, Network, Virtualization. DevOps Interview Questions</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60034</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/bregman-arie/devops-exercises</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bregman-arie/devops-exercises</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo38">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Robust Speech Recognition via Large-Scale Weak Supervision</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53166</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/openai/whisper</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">openai/whisper</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo39">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">《动手学深度学习》：面向中文读者、能运行、可讨论。中英文版被70多个国家的500多所大学用于教学。</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52376</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/d2l-ai/d2l-zh</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d2l-ai/d2l-zh</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo40">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scrapy, a fast high-level web crawling &amp; scraping framework for Python.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49639</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/scrapy/scrapy</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scrapy/scrapy</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#SQL">
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <useCase rdf:resource="#relational database management system"/>
+  <paradigm rdf:resource="#declarative programming"/>
+  <influencedBy rdf:resource="#first-order logic"/>
+  <influencedBy rdf:resource="#Datalog"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q47607</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#relational database management system">
+  <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q3932296</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#declarative programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q531152</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Datalog">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1172264</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#first-order logic">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q4055684</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo41">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kode dan Data Wilayah Administrasi &amp; Pulau Indonesia sesuai Kepmendagri No 100.1.1-6117 Tahun 2022  dengan PHP+MySQL+AJaX. Demo link : https://wilayah.cahyadsn.com/</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">693</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/cahyadsn/wilayah</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cahyadsn/wilayah</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo42">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The solutions of all SQL hackerrank challenges using MySQL environment</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">601</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/Thomas-George-T/HackerRank-SQL-Challenges-Solutions</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thomas-George-T/HackerRank-SQL-Challenges-Solutions</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo43">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">⚙️ Código de manutenção do datalake (metadados e pacotes de acesso) | 📖 Docs: https://basedosdados.github.io/mais/</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">373</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/basedosdados/mais</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basedosdados/mais</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo44">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Open source billing and invoicing</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">305</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/tony-landis/agilebill</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tony-landis/agilebill</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo45">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoiSQL — Generating Music With SQL Queries</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">272</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/ClickHouse/NoiSQL</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ClickHouse/NoiSQL</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo46">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aulas, exercícios e resumos sobre banco de dados</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">239</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/brunocampos01/banco-de-dados</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">brunocampos01/banco-de-dados</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo47">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dbt Package for modeling raw data exported by Google Analytics 4. BigQuery support, only. </repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">239</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/Velir/dbt-ga4</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Velir/dbt-ga4</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo48">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sql related stuff, interview questions, mySQL complex queries</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/dhaval1406/SQL</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dhaval1406/SQL</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo49">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">menampilkan data provinsi,kota/kabupaten,kecamatan dan desa/kelurahan menggunakan AjAX. (update terbaru sesuai Kepmendagri no 100.1.1-6117 tahun 2022: https://github.com/cahyadsn/wilayah )</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">118</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/cahyadsn/daerah</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cahyadsn/daerah</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo50">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PostgreSQL schema and import scripts for recent US Census data</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">115</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/leehach/census-postgres</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">leehach/census-postgres</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#TypeScript">
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <paradigm rdf:resource="#generic programming"/>
+  <paradigm rdf:resource="#object-oriented programming"/>
+  <paradigm rdf:resource="#imperative programming"/>
+  <paradigm rdf:resource="#event-driven programming"/>
+  <paradigm rdf:resource="#functional programming"/>
+  <influencedBy rdf:resource="#JavaScript"/>
+  <influencedBy rdf:resource="#C#"/>
+  <influencedBy rdf:resource="#Java"/>
+  <influencedBy rdf:resource="#CoffeeScript"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q978185</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C#">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <paradigm rdf:resource="#generic programming"/>
+  <paradigm rdf:resource="#imperative programming"/>
+  <paradigm rdf:resource="#class-based programming"/>
+  <paradigm rdf:resource="#functional programming"/>
+  <paradigm rdf:resource="#strict programming"/>
+  <paradigm rdf:resource="#structured programming"/>
+  <paradigm rdf:resource="#object-oriented programming"/>
+  <paradigm rdf:resource="#reflective programming"/>
+  <paradigm rdf:resource="#multi-paradigm programming"/>
+  <paradigm rdf:resource="#event-driven programming"/>
+  <influencedBy rdf:resource="#Rust"/>
+  <influencedBy rdf:resource="#Object Pascal"/>
+  <influencedBy rdf:resource="#Icon"/>
+  <influencedBy rdf:resource="#Visual Basic"/>
+  <influencedBy rdf:resource="#Eiffel"/>
+  <influencedBy rdf:resource="#Java"/>
+  <influencedBy rdf:resource="#Cω"/>
+  <influencedBy rdf:resource="#Haskell"/>
+  <influencedBy rdf:resource="#ML"/>
+  <influencedBy rdf:resource="#C++"/>
+  <influencedBy rdf:resource="#C"/>
+  <influencedBy rdf:resource="#Delphi"/>
+  <influencedBy rdf:resource="#Visual J++"/>
+  <influencedBy rdf:resource="#J#"/>
+  <influencedBy rdf:resource="#Modula-3"/>
+  <influencedBy rdf:resource="#F#"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q2370</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CoffeeScript">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1106819</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo51">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">freeCodeCamp.org's open-source codebase and curriculum. Learn to code for free.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">379957</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/freeCodeCamp/freeCodeCamp</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">freeCodeCamp/freeCodeCamp</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo52">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Interactive roadmaps, guides and other educational content to help developers grow in their careers.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">261217</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/kamranahmedse/developer-roadmap</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kamranahmedse/developer-roadmap</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo53">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Visual Studio Code</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">154314</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/microsoft/vscode</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">microsoft/vscode</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo54">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">💯 Curated coding interview preparation materials for busy software engineers</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">103195</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/yangshun/tech-interview-handbook</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">yangshun/tech-interview-handbook</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo55">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TypeScript is a superset of JavaScript that compiles to clean JavaScript output.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95861</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/microsoft/TypeScript</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">microsoft/TypeScript</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo56">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MUI Core: Ready-to-use foundational React components, free forever. It includes Material UI, which implements Google's Material Design.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90049</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/mui/material-ui</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mui/material-ui</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo57">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An enterprise-class UI design language and React UI library</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">88802</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/ant-design/ant-design</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ant-design/ant-design</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo58">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Storybook is a frontend workshop for building UI components and pages in isolation. Made for UI development, testing, and documentation. </repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">81288</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/storybookjs/storybook</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">storybookjs/storybook</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo59">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"The mother of all demo apps" — Exemplary fullstack Medium.com clone powered by React, Angular, Node, Django, and many more</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">77193</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/gothinkster/realworld</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gothinkster/realworld</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo60">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Next generation frontend tooling. It's fast!</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">62050</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/vitejs/vite</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vitejs/vite</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#GNU Bash">
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleHaveWorkedWith"/>
+  <useCase rdf:resource="#Unix shell"/>
+  <influencedBy rdf:resource="#C shell"/>
+  <influencedBy rdf:resource="#ALGOL 68"/>
+  <influencedBy rdf:resource="#KornShell"/>
+  <influencedBy rdf:resource="#Bourne shell"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q189248</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Unix shell">
+  <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q14663</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bourne shell">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q844595</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#KornShell">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q204222</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C shell">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1064516</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo61">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master the command line, in one page</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">142338</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/jlevy/the-art-of-command-line</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jlevy/the-art-of-command-line</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo62">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">72524</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/nvm-sh/nvm</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nvm-sh/nvm</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo63">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">:cherry_blossom: A command-line fuzzy finder</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56324</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/junegunn/fzf</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">junegunn/fzf</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo64">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A tool for writing better scripts</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">39273</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/google/zx</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">google/zx</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo65">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">☄🌌️  The minimal, blazing-fast, and infinitely customizable prompt for any shell!</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38203</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/starship/starship</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">starship/starship</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo66">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">👩‍💻👨‍💻 Awesome cheatsheets for popular programming languages, frameworks and development tools. They include everything you should know in one single file.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35619</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/LeCoupa/awesome-cheatsheets</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LeCoupa/awesome-cheatsheets</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo67">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">📖 A collection of pure bash alternatives to external processes.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35247</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/dylanaraps/pure-bash-bible</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dylanaraps/pure-bash-bible</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo68">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pure Unix shell script implementing ACME client protocol</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34541</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/acmesh-official/acme.sh</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acmesh-official/acme.sh</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo69">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ShellCheck, a static analysis tool for shell scripts</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34008</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/koalaman/shellcheck</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">koalaman/shellcheck</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo70">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A curated list of awesome command-line frameworks, toolkits, guides and gizmos. Inspired by awesome-php.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">29566</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/alebcay/awesome-shell</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alebcay/awesome-shell</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#concurrent object-oriented programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q5159109</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#component-based software engineering">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q609588</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#structured programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q223335</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#reflective programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1056451</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#class-based programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q5127844</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Niklaus Wirth">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q92604</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Ada">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q154755</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#UCSD Pascal">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q176984</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Objective-C">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q188531</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Simula">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q212569</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Smalltalk">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q235086</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Java annotation">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q567345</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Object Pascal">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q633894</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Oberon">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1323362</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Mesa">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1042397</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Eiffel">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q732089</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Patrick Naughton">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q3369731</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#variadic function">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1505415</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#boxing">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1861094</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#foreach loop">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q3273595</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Simula 67">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q10371720</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo71">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">😮 Core Interview Questions &amp; Answers For Experienced Java(Backend) Developers | 互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务、海量数据处理等领域知识</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">72645</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/doocs/advanced-java</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doocs/advanced-java</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo72">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Google core libraries for Java</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48859</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/google/guava</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">google/guava</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo73">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">:fire: Android developers should collect the following utils(updating).</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32696</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/Blankj/AndroidUtilCode</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Blankj/AndroidUtilCode</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo74">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">阿里巴巴 MySQL binlog 增量订阅&amp;消费组件 </repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">27143</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/alibaba/canal</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alibaba/canal</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo75">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">《史上最简单的Spring Cloud教程源码》</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17605</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/forezp/SpringCloudLearning</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forezp/SpringCloudLearning</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo76">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Android library for managing images and the memory they use.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17018</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/facebook/fresco</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">facebook/fresco</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo77">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SmartTube - an advanced player for set-top boxes and tv running Android OS</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14134</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/yuliskov/SmartTube</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">yuliskov/SmartTube</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo78">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">✔️ Simple, pretty and powerful logger for android</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13710</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/orhanobut/logger</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">orhanobut/logger</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo79">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Realm is a mobile database: a replacement for SQLite &amp; ORMs</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11413</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/realm/realm-java</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">realm/realm-java</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo80">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An asynchronous, callback-based Http client for Android built on top of Apache's HttpClient libraries.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10647</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/android-async-http/android-async-http</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">android-async-http/android-async-http</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#strict programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q7623620</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Visual Basic">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q2378</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rust">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+  <paradigm rdf:resource="#generic programming"/>
+  <paradigm rdf:resource="#object-oriented programming"/>
+  <paradigm rdf:resource="#imperative programming"/>
+  <paradigm rdf:resource="#systems programming"/>
+  <paradigm rdf:resource="#functional programming"/>
+  <paradigm rdf:resource="#concurrent computing"/>
+  <influencedBy rdf:resource="#Limbo"/>
+  <influencedBy rdf:resource="#Haskell"/>
+  <influencedBy rdf:resource="#C++"/>
+  <influencedBy rdf:resource="#Ruby"/>
+  <influencedBy rdf:resource="#Scheme"/>
+  <influencedBy rdf:resource="#Swift"/>
+  <influencedBy rdf:resource="#Newsqueak"/>
+  <influencedBy rdf:resource="#Erlang"/>
+  <influencedBy rdf:resource="#Standard ML"/>
+  <influencedBy rdf:resource="#Cyclone"/>
+  <influencedBy rdf:resource="#C#"/>
+  <influencedBy rdf:resource="#Alef"/>
+  <influencedBy rdf:resource="#OCaml"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q575650</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#J#">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1160312</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Delphi">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q4037189</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#F#">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q648619</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ML">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q860654</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Visual J++">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q973097</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Cω">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1151190</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo81">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Linux kernel source tree</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">163000</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/torvalds/linux</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">torvalds/linux</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo82">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Display and control your Android device</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95945</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/Genymobile/scrcpy</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Genymobile/scrcpy</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo83">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Monitor your servers, containers, and applications, in high-resolution and in real-time!</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">66457</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/netdata/netdata</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">netdata/netdata</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo84">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBS Studio - Free and open source software for live streaming and screen recording</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53087</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/obsproject/obs-studio</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsproject/obs-studio</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo85">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Git Source Code Mirror - This is a publish-only repository but pull requests can be turned into patches to the mailing list via GitGitGadget (https://gitgitgadget.github.io/). Please follow Documentation/SubmittingPatches procedure for any of your improvements.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48318</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/git/git</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">git/git</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo86">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Port of Facebook's LLaMA model in C/C++</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47335</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/ggerganov/llama.cpp</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ggerganov/llama.cpp</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo87">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mirror of https://git.ffmpeg.org/ffmpeg.git</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40038</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/FFmpeg/FFmpeg</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FFmpeg/FFmpeg</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo88">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modern HTTP benchmarking tool</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36060</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/wg/wrk</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wg/wrk</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo89">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Android/iOS video player based on FFmpeg n3.4, with MediaCodec, VideoToolbox support.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31873</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/bilibili/ijkplayer</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bilibili/ijkplayer</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo90">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmux source code</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31346</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/tmux/tmux</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmux/tmux</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo91">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lean's LEDE source</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">27847</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/coolsnowwolf/lede</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">coolsnowwolf/lede</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo92">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Command-line JSON processor</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">27438</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/jqlang/jq</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jqlang/jq</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo93">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Port of OpenAI's Whisper model in C/C++</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26564</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/ggerganov/whisper.cpp</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ggerganov/whisper.cpp</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo94">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">How to create an OS from scratch</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25957</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/cfenollosa/os-tutorial</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cfenollosa/os-tutorial</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo95">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Reliable USB Formatting Utility</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25572</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/pbatard/rufus</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pbatard/rufus</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo96">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A code-searching tool similar to ack, but faster.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25425</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/ggreer/the_silver_searcher</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ggreer/the_silver_searcher</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo97">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Convolutional Neural Networks</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24927</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/pjreddie/darknet</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pjreddie/darknet</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo98">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🎥 Command line video player</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24643</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/mpv-player/mpv</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mpv-player/mpv</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo99">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stb single-file public domain libraries for C/C++</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24010</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/nothings/stb</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nothings/stb</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo100">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TLS/SSL and crypto library</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23337</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/openssl/openssl</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">openssl/openssl</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo101">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cross-platform asynchronous I/O</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22619</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/libuv/libuv</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">libuv/libuv</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo102">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TDengine is an open source, high-performance, cloud native time-series database optimized for Internet of Things (IoT), Connected Cars, Industrial IoT and DevOps.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22383</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/taosdata/TDengine</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taosdata/TDengine</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo103">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TCP port scanner, spews SYN packets asynchronously, scanning entire Internet in under 5 minutes.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22063</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/robertdavidgraham/masscan</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">robertdavidgraham/masscan</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo104">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zstandard - Fast real-time compression algorithm</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21433</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/facebook/zstd</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">facebook/zstd</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo105">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">本项目曾冲到全球第一，干货集锦见本页面最底部，另完整精致的纸质版《编程之法：面试和算法心得》已在京东/当当上销售</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21149</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/julycoding/The-Art-Of-Programming-By-July-2nd</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">julycoding/The-Art-Of-Programming-By-July-2nd</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo106">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alternative firmware for ESP8266 and ESP32 based devices with easy configuration using webUI, OTA updates, automation using timers or rules, expandability and entirely local control over MQTT, HTTP, Serial or KNX. Full documentation at</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20761</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/arendst/Tasmota</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arendst/Tasmota</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo107">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">How to Make a Computer Operating System in C++</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20723</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/SamyPesse/How-to-Make-a-Computer-Operating-System</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SamyPesse/How-to-Make-a-Computer-Operating-System</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo108">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An official read-only mirror of http://hg.nginx.org/nginx/ which is updated hourly. Pull requests on GitHub cannot be accepted and will be automatically closed. The proper way to submit changes to nginx is via the nginx development mailing list, see http://nginx.org/en/docs/contributing_changes.html</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19526</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/nginx/nginx</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nginx/nginx</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo109">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UNIX-like reverse engineering framework and command-line toolset</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19030</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/radareorg/radare2</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radareorg/radare2</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo110">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A curated list of awesome things related to HarmonyOS. 华为鸿蒙操作系统。</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18951</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/Awesome-HarmonyOS/HarmonyOS</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Awesome-HarmonyOS/HarmonyOS</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#systems programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageUseCase"/>
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1936256</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#procedural programming">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1418502</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo111">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Linux kernel source tree</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">163000</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/torvalds/linux</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">torvalds/linux</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo112">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Redis is an in-memory database that persists on disk. The data model is key-value, but many different kind of values are supported: Strings, Lists, Sets, Sorted Sets, Hashes, Streams, HyperLogLogs, Bitmaps.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">62774</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/redis/redis</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">redis/redis</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo113">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A new bootable USB solution.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">54993</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/ventoy/Ventoy</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventoy/Ventoy</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo114">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBS Studio - Free and open source software for live streaming and screen recording</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53087</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/obsproject/obs-studio</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsproject/obs-studio</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo115">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Git Source Code Mirror - This is a publish-only repository but pull requests can be turned into patches to the mailing list via GitGitGadget (https://gitgitgadget.github.io/). Please follow Documentation/SubmittingPatches procedure for any of your improvements.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48318</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/git/git</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">git/git</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo116">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Port of Facebook's LLaMA model in C/C++</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47335</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/ggerganov/llama.cpp</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ggerganov/llama.cpp</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo117">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The PHP Interpreter</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36571</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/php/php-src</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">php/php-src</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo118">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A command line tool and library for transferring data with URL syntax, supporting DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTMP, RTMPS, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET, TFTP, WS and WSS. libcurl offers a myriad of powerful features</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32721</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/curl/curl</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">curl/curl</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo119">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Android/iOS video player based on FFmpeg n3.4, with MediaCodec, VideoToolbox support.</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31873</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/bilibili/ijkplayer</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bilibili/ijkplayer</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#programminglanguagepopularrepo120">
+  <rdf:type rdf:resource="#ProgrammingLanguagePopularRepo"/>
+  <repoDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lean's LEDE source</repoDescription>
+  <repoNumberOfStars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">27847</repoNumberOfStars>
+  <repoUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/coolsnowwolf/lede</repoUrl>
+  <repoName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">coolsnowwolf/lede</repoName>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#assembly language">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q165436</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Fortran">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q83303</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#PL/I">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q223433</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ALGOL">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q188436</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#B">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q797302</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#BCPL">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q810009</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#CPL">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q2347334</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ALGOL 60">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1209759</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#concurrent computing">
+  <rdf:type rdf:resource="#ProgrammingLanguageParadigm"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q128392</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Cyclone">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q79598</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Ruby">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q161053</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#OCaml">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q212587</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Newsqueak">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q262003</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Erlang">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q334879</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Limbo">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q544927</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Swift">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q17118377</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Alef">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1895587</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Go">
+  <rdf:type rdf:resource="#ProgrammingLanguagePeopleWantToWorkWith"/>
+  <paradigm rdf:resource="#procedural programming"/>
+  <paradigm rdf:resource="#object-oriented programming"/>
+  <paradigm rdf:resource="#structured programming"/>
+  <paradigm rdf:resource="#imperative programming"/>
+  <paradigm rdf:resource="#functional programming"/>
+  <paradigm rdf:resource="#concurrent computing"/>
+  <influencedBy rdf:resource="#Limbo"/>
+  <influencedBy rdf:resource="#Oberon"/>
+  <influencedBy rdf:resource="#communicating sequential processes"/>
+  <influencedBy rdf:resource="#Pascal"/>
+  <influencedBy rdf:resource="#Active Oberon"/>
+  <influencedBy rdf:resource="#C"/>
+  <influencedBy rdf:resource="#Modula-2"/>
+  <influencedBy rdf:resource="#APL"/>
+  <influencedBy rdf:resource="#Oberon-2"/>
+  <influencedBy rdf:resource="#Modula"/>
+  <influencedBy rdf:resource="#BCPL"/>
+  <influencedBy rdf:resource="#Smalltalk"/>
+  <influencedBy rdf:resource="#Newsqueak"/>
+  <influencedBy rdf:resource="#Alef"/>
+  <influencedBy rdf:resource="#occam"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q37227</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Pascal">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q81571</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Active Oberon">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q344108</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Oberon-2">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q3251260</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Modula-2">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q777358</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#occam">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q838062</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Modula">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q2428476</wikiDataUrl>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#communicating sequential processes">
+  <rdf:type rdf:resource="#ProgrammingLanguageInfluencedBy"/>
+  <wikiDataUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.wikidata.org/entity/Q1120460</wikiDataUrl>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>
