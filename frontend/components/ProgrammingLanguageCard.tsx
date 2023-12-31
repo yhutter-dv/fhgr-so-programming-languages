@@ -5,7 +5,8 @@ type Props = {
 };
 
 export function ProgrammingLanguageCard({ programmingLanguage }: Props) {
-  const gitRepoUrl = `/gitrepos/${programmingLanguage.name}`;
+  const gitRepoUrl =
+    `/gitrepos?programmingLanguage=${programmingLanguage.name}`;
   const hasUseCases = programmingLanguage.useCases?.length > 0;
   const hasParadigms = programmingLanguage.paradigms?.length > 0;
   const hasInfluences = programmingLanguage.influences?.length > 0;

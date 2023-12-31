@@ -7,7 +7,6 @@ A simple web application using `rdflib`, `owlready2` and the Stackoverflow Annua
 |-------|-----|
 |`clean_data.py`| Generats a JSON File from the Stackoverflow CSV File.|
 |`knowledge_engineering_extraction.py`| Generates an Ontology based on JSON File (see Script `clean_data.py`).|
-|`app.py`| A simple Frontend written with Flask.|
 
 ## :rocket: Setup
 
@@ -50,6 +49,12 @@ cd frontend
 deno task start
 ```
 
+Please note that you can configure the Url for the API Endpoint in the `.env` file under the `frontend` directory.
+
+```bash
+API_URL=http://localhost:6969
+```
+
 ## Backend
 For the Frontend a simple Backend was implemented with [FastAPI](https://fastapi.tiangolo.com/).
 
@@ -61,6 +66,7 @@ python -m venv ./venv
 source venv/bin/activate.sh
 uvicorn app:app --port 6969 --reload
 ```
+> Please note that the Port you specify should match the one you have in the `.env` file under the `frontend` directory.
 
 ## :clap: Used References
 
