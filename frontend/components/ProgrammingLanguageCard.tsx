@@ -13,9 +13,13 @@ export function ProgrammingLanguageCard({ programmingLanguage }: Props) {
   return (
     <div class="shadow flex flex-col p-4">
       <div class="flex flex-row justify-between">
-        <h1 class="text-xl font-bold">
+        <a
+          class="text-xl font-bold underline underline-offset-1"
+          href={programmingLanguage.url}
+          target="_blank"
+        >
           {programmingLanguage.name}
-        </h1>
+        </a>
         <a class="underline underline-offset-1" href={gitRepoUrl}>
           See popular GitRepos
         </a>
