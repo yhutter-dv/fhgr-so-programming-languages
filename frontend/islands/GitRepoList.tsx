@@ -33,7 +33,15 @@ export default function GitRepoList({ language, config }: Props) {
       },
     );
     const result = await response.json() as GitRepo[];
-    console.log(result);
+    // Sort by number of stars
+    result.sort((a, b) => {
+      if (a.numberOfStars < b.numberOfStars) {
+        return 1;
+      } else if (a.numberOfStars > b.numberOfStars) {
+        return -1;
+      }
+      return 0;
+    });
     setRepos([...result]);
   }
 
