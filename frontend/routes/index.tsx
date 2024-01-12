@@ -19,8 +19,22 @@ export default async function Index() {
     >;
   };
 
+  const getProgrammingLanguagesPeopleHaveWorkedWith = async (): Promise<
+    ProgrammingLanguage[]
+  > => {
+    const response = await fetch(
+      `${API_URL}/languages_people_have_worked_with`,
+    );
+    return await response.json() as Promise<
+      ProgrammingLanguage[]
+    >;
+  };
+
   const languagesPeopleWantToWorkWith =
     await getProgrammingLanguagesPeopleWantToWorkWith();
+
+  const languagesPeopleHaveWorkedWith =
+    await getProgrammingLanguagesPeopleHaveWorkedWith();
 
   return (
     <>
@@ -73,11 +87,11 @@ export default async function Index() {
         </div>
 
         <h4 class="text-2xl text-center font-bold my-8">
-          Programming Languages <Badge text="People are working in" />
+          Programming Languages <Badge text="People have worked with" />
         </h4>
 
         <div class="grid grid-cols-3 grid-flow-row gap-4 my-4">
-          {languagesPeopleWantToWorkWith.map((l) => (
+          {languagesPeopleHaveWorkedWith.map((l) => (
             <ProgrammingLanguageCard programmingLanguage={l} />
           ))}
         </div>

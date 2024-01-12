@@ -55,6 +55,14 @@ def get_programming_languages_people_want_to_work_with():
 			languages.append(language)
 	return languages
 
+def get_programming_languages_people_have_worked_with():
+	languages = []
+	with ONTOLOGY:
+		for element in filter_out_fusion_class(ONTOLOGY.ProgrammingLanguagePeopleHaveWorkedWith.instances()):
+			language = create_programming_language_from_onto_element(element)
+			languages.append(language)
+	return languages
+
 def get_use_cases_for_language(language):
 	use_cases = []
 	for element in language.useCase:
@@ -105,12 +113,17 @@ def get_git_repos_for_language_name(language_name):
 ONTOLOGY_FILE_PATH = "./data/output_ontology.rdf"
 ONTOLOGY = load_ontology()
 PROGRAMMING_LANGUAGES_PEOPLE_WANT_TO_WORK_WITH = get_programming_languages_people_want_to_work_with()
+PROGRAMMING_LANGUAGES_PEOPLE_HAVE_WORKED_WITH = get_programming_languages_people_have_worked_with()
 app = create_app()
 
 
 @app.get("/languages_people_want_to_work_with")
 async def languages_people_want_to_work_with():
 	return PROGRAMMING_LANGUAGES_PEOPLE_WANT_TO_WORK_WITH
+
+@app.get("/languages_people_have_worked_with")
+async def languages_people_have_worked_with():
+	return PROGRAMMING_LANGUAGES_PEOPLE_HAVE_WORKED_WITH
 
 @app.post("/git_repos/")
 async def git_repos(request: GitRepoRequest):
