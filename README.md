@@ -1,4 +1,12 @@
-# Programming Language Insights based on Stackoverflow Survey
+<div align="center">
+    <h1>:brain: Programming Language Insights based on Stackoverflow Survey 2023</h1>
+    <br/>
+    <br/>
+    <img src="./images/screenshot-01.png" alt="Screenshot Home Bereich"/>
+    <img src="./images/screenshot-02.png" alt="Screenshot GitRepos Bereich"/>
+</div>
+
+# What is it?
 A simple web application using `rdflib`, `owlready2` and the Stackoverflow Annual Developer Survey from 2023 to display useful information about Programming Languages and popular GitHub Repositories. 
 
 ## :computer: Scripts
@@ -27,8 +35,9 @@ pip install -r requirements.txt
 ### Documentation
 Make sure pandoc and the necessary latex packages are installed:
 ```bash
-sudo pacman -S pandoc texlive
+sudo pacman -S pandoc texlive ttf-jetbrains 
 ```
+> :warning: Please make sure you have at least Pandoc Version > 3.1.8 installed because of this issue [here](https://github.com/Wandmalfarbe/pandoc-latex-template/issues/361) For example you can download Pandoc from [here](https://github.com/jgm/pandoc/releases/)
 
 ## :books: Documentation
 As a base template the awesome pandoc-latex-template from [Wandmalfarbe](https://github.com/Wandmalfarbe/pandoc-latex-template) was used. In order to generate the Documentation simply the `doc.sh` file executable and run it:
@@ -67,6 +76,20 @@ source venv/bin/activate.sh
 uvicorn app:app --port 6969 --reload
 ```
 > Please note that the Port you specify should match the one you have in the `.env` file under the `frontend` directory.
+
+### Create Visual Graph Representation of Ontology
+In order to create a graph representation of the Ontology first of all make sure that `graphviz` is installed
+```bash
+sudo pacman -S graphviz
+```
+
+After that simply do the following commands
+```bash
+cd backend
+source venv/bin/activate.sh
+cd data
+rdf2dot base_ontology.rdf | dot -Tpng > base_ontology.png
+``` 
 
 ## :clap: Used References
 
